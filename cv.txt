@@ -1,0 +1,96 @@
+data:05.2023 – obecnie	
+firma:Teva Pharmaceuticals  
+stanowisko: Starszy specjalista ds. projektów internetowych
+zakres obowiazkow:
+-	Zarządzanie 20 stronami brandowymi na różnych systemach CMS (wordpress,EPI CMS,autorskie CMSy): np. teva.pl, migrena.pl, sudocrempolska.pl, calperos.pl, tevamed.pl
+-	Wdrożenie strategii SEO na stronach produktowych 
+-	Wdrożenie Asystenta AI na stronie migrena.pl
+-	Współpraca z agencją digitalową przy projektach
+-	Przygotowywanie stron typu Rich Content oraz prowadzenie kampanii na Ceneo i w aptekach internetowych (współpraca z domem mediowym)
+-	Zarządzanie projektami digital – np. launch projektu Tell Me Doctor – webinary dla lekarzy, implementacja strategii NPS – mierzenie satysfakcji klienta w obszarze digitalu, redesign stron produktowych przy współpracy z teamem w Chorwacji
+-	Analiza ruchu na stronach i raporty w Google analytics, dashboardy w Looker studio
+-	Przygotowywanie mailingów do lekarzy w systemach Veeva i Salesforce
+-	Współpraca z webdeveloperem, działem IT, brand managerami
+-	Raportowanie do kierownika digital marketingu
+data:02.2022 – 03.2023	
+firma:CKSource – projekt ckeditor.com –
+stanowisko: Website product owner
+zakres obowiazkow:
+-	Redesign strony: od koncepcji po wdrożenie nowej strony ckeditor.com
+-	Launch na stronie www nowego produktu – CKBox
+-	Tworzenie makiet UX stron w Figmie
+-	Zarządzanie rozproszonym zespołem deweloperów, grafików, testerów, copywriterów - codzienna komunikacja na Slacku
+-	Optymalizacja powdrożeniowa pod kątem SEO,UX
+-	Analiza ruchu na stronie i raporty w Google analytics, raporty w Looker studio
+-	Testy A/B wprowadzanych zmian – Google optimizer,Hotjar
+-	Zarządzanie backlogiem projektu
+-	Codzienna współpraca z zespołem, raportowanie do dyrektora marketingu
+data:11.2021 – 02.2022	
+firma:Sigma BIS S.A.– projekt orlen.pl – 
+stanowisko:Senior CMS & content specialist
+zakres obowiazkow:
+-	Bieżąca obsługa strony orlen.pl (CMS Adobe AEM)
+-	Bieżąca obsługa strony stopcafe.pl (Wordpress CMS)
+-	Bieżąca obsługa strony sigma-media.pl (Wordpress CMS)
+-	Codzienna współpraca z klientem, raportowanie do członka zarządu
+
+data:03.2016 – 10.2021	
+firma:Huawei – projekt consumer.huawei.com - 
+stanowisko:Regional Digital Manager
+zakres obowiazkow:
+-	Zarządzanie i rozwój stron Huawei dla rynków CEE & Nordic (24 kraje) w CMS Adobe AEM
+-	Stworzenie procesów współpracy z krajami/agencjami  
+-	Przygotowywanie stron landing page pod kampanie digitalowe
+-	Wsparcie komunikacji marketingowej w kanale digital
+-	Zarządzanie kampaniami display/programmatic w regionie CEE&Nordic
+-	Współpraca z działem IT w Chinach oraz zarządzanie praca agencji
+-	Przygotowywanie contentu do kampanii na FB,YT (m. in. wprowadzenie modeli Huawei P40,Mate 20, P10 oraz P9 na rynek, kampania świąteczna #BePresent z nagrodą Srebrnej Effie, kampanie typu Back to school, summer campaign) – współpraca z DDB oraz Facebook Polska
+-	Analiza ruchu na stronie w Google Analytics
+-	Optymalizacja stron pod kątem SEO,UX,Pagespeed
+-	Współpraca przy redesignach stron Huawei
+data:
+firma:02.2015 – 02.2016	ITI Neovison (nc+) - projekt ncplus.pl -
+stanowisko: Specjalista ds. projektów internetowych
+zakres obowiazkow:
+-	Zarządzanie i rozwój strony ncplus.pl (cms Sitecore 8.0)
+-	Wsparcie dla działu komunikacji przy kampaniach e-marketingowych 
+-	Współpraca z klientem wewnętrznym firmy ( m.in. dział HR, CRM, Programming,  Kreacji, Prawny, e-commerce) oraz zewnętrznym (m.in. HBO,Disney, dostawca IT)
+-	Przygotowywanie stron landing page z działem Kreacji i dostawcą technologicznym
+-	Optymalizacja stron pod kątem SEO i UX
+-	Analiza oraz wyciąganie wniosków z ruchu na stronie (Google Analytics)
+-	Przygotowywanie kampanii e-mailingowych (układanie kalendarzy wysyłek, tworzenie koncepcji, definiowanie kampanii w systemie, analiza wyników, optymalizacja)
+-	Przygotowywanie e-magazynu dla klientów ncplus
+-	Projekty usprawniania funkcjonalności mechanizmów Sitecore oraz strony www
+-	Drobne prace graficzne w Photoshopie
+data:09.2014 – 01.2015		Whiteoctopus – projekt nike.com -
+stanowisko: Project manager
+zakres obowiazkow:
+-	Bieżąca obsługa strony nike.com
+-	Tworzenie oraz wysyłka mailingów
+-	Projekt e-commerce dla oficjalnego sklepu nike (R-gol.com)
+-	Wdrożenie aplikacji nike training na facebooku
+data:10.2010 – 08.2014 		
+firma:Wunderman Polska sp. z o.o - projekt nokia.pl-  
+stanowisko:Digital Producer
+zakres obowiazkow:
+-	Projekty związane z utrzymaniem i rozwojem strony www.nokia.pl 
+-	Lokalne i globalne akcje e-marketingowe (koncepcja, wdrożenie, analiza) 
+-	Wdrożenie i rozwój kanału e-commerce na nokia.pl (współpraca z operatorami Play, Orange, Plus, T-Mobile oraz lokalnymi oficjalnymi sklepami Nokia) 
+-	Projekty związane z utrzymaniem stron Nokia w krajach CEE (Czechy, Słowacja, Bułgaria, Chorwacja) 
+-	Przygotowywanie oraz wysyłka kampanii mailingowych 
+-	Kontakt z klientem lokalnym oraz globalnym  (m.in. Nokia Global, Nokia Czechy)
+-	Współpraca przy projektach z PM z Nokia Global, lokalnie grafikami oraz programistami 
+-	Kilkukrotny redesign strony nokia.pl 
+data:09.2007 – 10.2010		
+firma:Play – Marketing - projekt play.pl - 
+stanowisko:Specjalista ds. rozwiązań internetowych
+zakres obowiazkow:
+-	Aktualizacja i rozbudowa strony play.pl, dlafirm.play.pl, rozwój strony korporacyjnej 
+-	Prowadzenie projektów e-marketingowych związanych z wprowadzeniem nowych ofert, promocji oraz usług 
+-	Projekty e-marketingowe na www związane z promocją i nowymi ofertami (współpraca z zespołami odpowiedzialnymi za tworzenie poszczególnych ofert) 
+-	Projekty e-commerce wspierające sprzedaż oferty oraz telefonów przez kanał www 
+-	Optymalizacja serwisu pod kątem SEO,UX
+-	Rozwój portfolio telefonów na stronach www (skrócenie ścieżki sprzedaży, wzrost sprzedaży oferty przez kanał online)
+-	Współpraca z agencją interaktywną K2, dostawcą technologicznym Asseco oraz dostawcą IT Pretius 
+-	Współpraca przy projektach z klientem wewnętrznym (m.in IT, dział komunikacji, dział handset, dział HR) 
+-	Udział w 3 dużych redesignach portalu oraz wdrożeniu e-shop
