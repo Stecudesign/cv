@@ -1,17 +1,25 @@
 # Paweł Steckiewicz / Digital Expert
 
-Nowoczesne portfolio online prezentujące doświadczenie zawodowe, projekty digital, narzędzia i rozwój kompetencji.
+Nowoczesne portfolio online prezentujące doświadczenie zawodowe, projekty digital, narzędzia i rozwój kompetencji w obszarze web, UX i marketingu cyfrowego.
 
 ![Podgląd portfolio](README-assets/portfolio-home.png)
 
-## O projekcie
+## Co pokazuje ten projekt
 
-Strona została przygotowana jako statyczne portfolio prezentujące:
+Portfolio zostało przygotowane jako statyczna strona prezentująca:
 
 - doświadczenie zawodowe i zakres odpowiedzialności
-- wybrane projekty digital i video
+- wybrane projekty digital, web i video
 - narzędzia, technologie i obszary pracy
-- certyfikaty oraz zainteresowania
+- certyfikaty, szkolenia i zainteresowania
+
+## Dla kogo
+
+Projekt może działać jako:
+
+- portfolio online dla rekrutera
+- wizytówka zawodowa dla klienta lub partnera biznesowego
+- baza do dalszej rozbudowy o CMS, formularz kontaktowy albo analytics
 
 ## Stack
 
@@ -37,9 +45,11 @@ Otwórz `index.html` w przeglądarce.
 
 `https://github.com/Stecudesign/cv`
 
-## Publikacja przez GitHub Pages
+## GitHub Pages
 
-Aby opublikować stronę przez GitHub Pages:
+Repo jest przygotowane do publikacji przez GitHub Pages.
+
+Aby włączyć publikację:
 
 1. Wejdź w `Settings` repozytorium.
 2. Otwórz `Pages`.
