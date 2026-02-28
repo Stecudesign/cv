@@ -1,22 +1,33 @@
-# CV / Portfolio
+# Paweł Steckiewicz / Digital Expert
 
-Statyczna strona portfolio prezentująca doświadczenie zawodowe, projekty, narzędzia i zainteresowania.
+Nowoczesne portfolio online prezentujące doświadczenie zawodowe, projekty digital, narzędzia i rozwój kompetencji.
+
+![Podgląd portfolio](README-assets/portfolio-home.png)
+
+## O projekcie
+
+Strona została przygotowana jako statyczne portfolio prezentujące:
+
+- doświadczenie zawodowe i zakres odpowiedzialności
+- wybrane projekty digital i video
+- narzędzia, technologie i obszary pracy
+- certyfikaty oraz zainteresowania
 
 ## Stack
 
 - HTML
 - CSS
 - JavaScript
-- Tailwind CDN
+- Tailwind CSS z CDN
 
-## Zawartość
+## Struktura strony
 
-- sekcja hero z nawigacją i animowanym marquee logotypów
-- sekcja doświadczenie z kartami firm i szczegółami ról
-- sekcja projekty z podglądem wideo
-- sekcja certyfikaty i szkolenia
-- sekcja narzędzia
-- sekcja zainteresowania
+- `Hero` z nawigacją i animowanym marquee logotypów
+- `Doświadczenie` z kartami firm i rolami
+- `Projekty` z podglądem video
+- `Certyfikaty i szkolenia`
+- `Narzędzia`
+- `Zainteresowania`
 
 ## Uruchomienie lokalnie
 
@@ -24,16 +35,14 @@ Otwórz `index.html` w przeglądarce.
 
 ## Repozytorium
 
-Repo: `https://github.com/Stecudesign/cv`
+`https://github.com/Stecudesign/cv`
 
-## GitHub Pages
+## Publikacja przez GitHub Pages
 
-Projekt może działać jako GitHub Pages z gałęzi `main`.
-
-Aby włączyć publikację:
+Aby opublikować stronę przez GitHub Pages:
 
 1. Wejdź w `Settings` repozytorium.
 2. Otwórz `Pages`.
-3. W `Build and deployment` wybierz `Deploy from a branch`.
-4. Wskaż branch `main` i folder `/ (root)`.
+3. W sekcji `Build and deployment` wybierz `Deploy from a branch`.
+4. Ustaw branch `main` i folder `/ (root)`.
 5. Zapisz ustawienia.
