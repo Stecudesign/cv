@@ -1,4 +1,4 @@
-﻿const burgerMenu = document.querySelector('.burger-menu');
+const burgerMenu = document.querySelector('.burger-menu');
 const mainNav = document.querySelector('.main-nav');
 const body = document.body;
 const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
@@ -151,8 +151,9 @@ if (revealItems.length) {
 
 if (heroStatValues.length) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const heroRevealDelay = 1000;
 
-    const animateCounter = (el, duration = 3800) => {
+    const animateCounter = (el, duration = 1600) => {
         const target = Number(el.textContent.replace(/[^\d]/g, ''));
         if (!Number.isFinite(target) || target <= 0) {
             return;
@@ -188,25 +189,13 @@ if (heroStatValues.length) {
                 return;
             }
 
-            animateCounter(el);
+            window.setTimeout(() => {
+                animateCounter(el);
+            }, heroRevealDelay);
         });
     };
 
-    if ('IntersectionObserver' in window) {
-        const statsRoot = document.querySelector('.hero-stats') || heroStatValues[0];
-        const counterObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    runCounters();
-                    observer.disconnect();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counterObserver.observe(statsRoot);
-    } else {
-        runCounters();
-    }
+    runCounters();
 }
 
 if (previewVideos.length) {
@@ -352,7 +341,6 @@ if (projectVideoModal && projectVideoPlayer && projectVideoTriggers.length) {
     });
 }
 
-buildInlineExperienceHeaders();
 
 if (accordionItems.length && sourceExpFeatures.length) {
     accordionItems.forEach((item) => {
