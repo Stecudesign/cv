@@ -12,12 +12,24 @@ const projectVideoModal = document.getElementById('project-video-modal');
 const projectVideoPlayer = document.getElementById('project-video-player');
 const projectVideoFrame = document.getElementById('project-video-frame');
 const projectVideoClose = document.querySelector('[data-video-close]');
+const certificateTriggers = document.querySelectorAll('[data-certificate-open]');
+const certificateModal = document.getElementById('certificate-modal');
+const certificateModalImage = document.getElementById('certificate-modal-image');
+const certificateModalClose = document.querySelector('[data-certificate-close]');
 const previewVideos = document.querySelectorAll('video.project-video-thumb');
 const projectYtVideo = document.querySelector('.project-yt-video');
 const projectsSection = document.querySelector('.projects-section');
 const accordionTriggers = document.querySelectorAll('.exp-accordion-trigger');
 const sourceExpFeatures = document.querySelectorAll('.bento-section .exp-features > .exp-feature');
 const accordionItems = document.querySelectorAll('.exp-accordion-item');
+expMetaItems.forEach((item, index) => {
+    item.style.setProperty('--exp-meta-reveal-delay', `${index * 240}ms`);
+});
+
+expFeatures.forEach((item, index) => {
+    item.style.setProperty('--exp-reveal-delay', `${220 + index * 240}ms`);
+});
+
 const buildInlineExperienceHeaders = () => {
     const experienceItems = document.querySelectorAll('.bento-section .exp-features > .exp-feature-meta');
 
@@ -337,6 +349,50 @@ if (projectVideoModal && projectVideoPlayer && projectVideoTriggers.length) {
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && projectVideoModal.classList.contains('is-open')) {
             closeVideoModal();
+        }
+    });
+}
+
+if (certificateModal && certificateModalImage && certificateTriggers.length) {
+    const openCertificateModal = (src, alt) => {
+        if (!src) {
+            return;
+        }
+
+        certificateModalImage.src = src;
+        certificateModalImage.alt = alt || 'Podglad certyfikatu';
+        certificateModal.classList.add('is-open');
+        certificateModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeCertificateModal = () => {
+        certificateModal.classList.remove('is-open');
+        certificateModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        certificateModalImage.removeAttribute('src');
+        certificateModalImage.alt = '';
+    };
+
+    certificateTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+            openCertificateModal(trigger.dataset.certificateSrc, trigger.dataset.certificateAlt);
+        });
+    });
+
+    if (certificateModalClose) {
+        certificateModalClose.addEventListener('click', closeCertificateModal);
+    }
+
+    certificateModal.addEventListener('click', (event) => {
+        if (event.target === certificateModal) {
+            closeCertificateModal();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && certificateModal.classList.contains('is-open')) {
+            closeCertificateModal();
         }
     });
 }

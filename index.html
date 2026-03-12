@@ -511,113 +511,167 @@
             </div>
         </div>
 
+        <div class="media-modal" id="certificate-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Podglad certyfikatu">
+            <div class="media-modal-dialog media-modal-dialog--image">
+                <button class="media-modal-close" type="button" data-certificate-close aria-label="Zamknij podglad">&times;</button>
+                <img id="certificate-modal-image" src="" alt="" loading="lazy">
+            </div>
+        </div>
+
         <section class="bg-slate-50 py-24 px-6 relative overflow-hidden" id="certyfikaty" data-nav-theme="light">
           <div class="absolute inset-0 bg-[url('/img/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
 
           <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-20">
-              <h2 class="text-[color:var(--primary)] font-semibold tracking-wider uppercase text-sm mb-3">Ciągły rozwój</h2>
+              <h2 class="text-[color:var(--primary)] font-semibold tracking-wider uppercase text-sm mb-3">Ci&#261;g&#322;y rozw&oacute;j</h2>
               <p class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">Certyfikaty i Szkolenia</p>
-              <p class="mt-4 text-lg text-slate-600">Inwestycja w najnowsze technologie i kompetencje przyszłości.</p>
+              <p class="mt-4 text-lg text-slate-600">Inwestycja w najnowsze technologie i kompetencje przysz&#322;o&#347;ci.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+            <div class="cert-grid mb-24">
+              <article class="cert-card cert-card--sensai">
+                <div class="cert-card__visual">
+                  <span class="cert-card__dot" aria-hidden="true"></span>
+                  <span class="cert-card__year">2025</span>
+                  <div class="cert-card__visual-inner">
+                    <p class="cert-card__brand">SENSAI</p>
+                  </div>
+                </div>
+                <div class="cert-card__body">
+                  <p class="cert-card__issuer">SENSAI ACADEMY</p>
+                  <h3 class="cert-card__title">SEO 3.0 - wykorzystanie narz&#281;dzi AI w SEO</h3>
+                  <div class="cert-card__footer">
+                    <span class="cert-card__tag">AI + SEO</span>
+                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/sensai.jpg" data-certificate-alt="Certyfikat SEO 3.0 SENSAI ACADEMY" aria-label="Poka&#380; certyfikat SEO 3.0 SENSAI ACADEMY">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 16L16 8"></path>
+                        <path d="M10 8h6v6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
 
-              <div class="group bg-white rounded-[2rem] p-2 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1),0_20px_25px_-5px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                <div class="absolute top-6 right-6 bg-[color:var(--white)]/78 backdrop-blur-sm border border-[color:var(--primary)]/35 text-[color:var(--primary-dark)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] text-sm font-bold py-1 px-3 rounded-full z-20 tabular-nums">2025</div>
-                <div class="h-56 rounded-[1.5rem] overflow-hidden relative">
-                     <img src="img/kursy/sensai.jpg" alt="Certyfikat SEO 3.0 SENSAI ACADEMY" loading="lazy" class="h-full w-full object-cover object-top">
-                     <div class="absolute inset-0 bg-[color:var(--primary)] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                </div>
-                <div class="p-6 pt-8">
-                  <h3 class="text-xl font-bold text-slate-900 leading-tight mb-2 group-hover:text-[color:var(--primary-dark)] transition-colors">SEO 3.0 – wykorzystanie narzędzi AI w SEO</h3>
-                  <div class="flex items-center text-sm text-slate-500 font-medium">
-                     <svg class="w-4 h-4 mr-2 text-[color:var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                     SENSAI ACADEMY
+              <article class="cert-card cert-card--aideas">
+                <div class="cert-card__visual">
+                  <span class="cert-card__dot" aria-hidden="true"></span>
+                  <span class="cert-card__year">2025</span>
+                  <div class="cert-card__visual-inner">
+                    <p class="cert-card__brand">AIDEAS</p>
                   </div>
                 </div>
-              </div>
+                <div class="cert-card__body">
+                  <p class="cert-card__issuer">AIDEAS / POLITECHNIKA WROC&#321;AWSKA</p>
+                  <h3 class="cert-card__title">Program rozwoju kompetencji AI</h3>
+                  <div class="cert-card__footer">
+                    <span class="cert-card__tag">Sztuczna inteligencja</span>
+                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/aiideas.jpg" data-certificate-alt="Program rozwoju kompetencji AI AIDEAS" aria-label="Poka&#380; certyfikat AIDEAS">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 16L16 8"></path>
+                        <path d="M10 8h6v6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
 
-              <div class="group bg-white rounded-[2rem] p-2 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1),0_20px_25px_-5px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                <div class="absolute top-6 right-6 bg-[color:var(--white)]/78 backdrop-blur-sm border border-[color:var(--primary)]/35 text-[color:var(--primary-dark)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] text-sm font-bold py-1 px-3 rounded-full z-20 tabular-nums">2025</div>
-                <div class="h-56 rounded-[1.5rem] overflow-hidden relative">
-                     <img src="img/kursy/aiideas.jpg" alt="Program rozwoju kompetencji AI AIDEAS" loading="lazy" class="h-full w-full object-cover object-top">
-                     <div class="absolute inset-0 bg-[color:var(--primary)] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                </div>
-                <div class="p-6 pt-8">
-                  <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2 group-hover:text-[color:var(--primary-dark)] transition-colors">Program rozwoju kompetencji AI</h3>
-                  <div class="flex items-center text-sm text-slate-500 font-medium">
-                     <svg class="w-4 h-4 mr-2 text-[color:var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                     <span class="truncate">AIDEAS / Politechnika Wrocławska</span>
+              <article class="cert-card cert-card--seo">
+                <div class="cert-card__visual">
+                  <span class="cert-card__dot" aria-hidden="true"></span>
+                  <span class="cert-card__year">2024</span>
+                  <div class="cert-card__visual-inner">
+                    <p class="cert-card__brand cert-card__brand--stacked">Marketing<br>Online</p>
                   </div>
                 </div>
-              </div>
+                <div class="cert-card__body">
+                  <p class="cert-card__issuer">MARKETING ONLINE</p>
+                  <h3 class="cert-card__title">Szkolenie SEO poziom podstawowy / zaawansowany</h3>
+                  <div class="cert-card__footer">
+                    <span class="cert-card__tag">SEO / Pozycjonowanie</span>
+                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/seo-marketingonline.jpg" data-certificate-alt="Szkolenie SEO Marketing Online" aria-label="Poka&#380; certyfikat Marketing Online">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 16L16 8"></path>
+                        <path d="M10 8h6v6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
 
-              <div class="group bg-white rounded-[2rem] p-2 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1),0_20px_25px_-5px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                <div class="absolute top-6 right-6 bg-[color:var(--white)]/78 backdrop-blur-sm border border-[color:var(--primary)]/35 text-[color:var(--primary-dark)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] text-sm font-bold py-1 px-3 rounded-full z-20 tabular-nums">2024</div>
-                <div class="h-56 rounded-[1.5rem] overflow-hidden relative">
-                    <img src="img/kursy/seo-marketingonline.jpg" alt="Szkolenie SEO Marketing Online" loading="lazy" class="h-full w-full object-cover object-top">
-                    <div class="absolute inset-0 bg-[color:var(--primary)] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                </div>
-                <div class="p-6 pt-8">
-                  <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2 group-hover:text-[color:var(--primary-dark)] transition-colors">Szkolenie SEO poziom podstawowy / zaawansowany</h3>
-                  <div class="flex items-center text-sm text-slate-500 font-medium">
-                     <svg class="w-4 h-4 mr-2 text-[color:var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                     Marketing Online
+              <article class="cert-card cert-card--ga4">
+                <div class="cert-card__visual">
+                  <span class="cert-card__dot" aria-hidden="true"></span>
+                  <span class="cert-card__year">2023</span>
+                  <div class="cert-card__visual-inner">
+                    <p class="cert-card__brand">GA4<span class="cert-card__brand-sub">PRO</span></p>
                   </div>
                 </div>
-              </div>
+                <div class="cert-card__body">
+                  <p class="cert-card__issuer">SPRAWNY MARKETING</p>
+                  <h3 class="cert-card__title">Szkolenie z Google Analytics 4 - poziom zaawansowany</h3>
+                  <div class="cert-card__footer">
+                    <span class="cert-card__tag">Analytics</span>
+                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/ga4pro-sprawnymarketing.jpg" data-certificate-alt="Szkolenie Google Analytics 4 zaawansowane" aria-label="Poka&#380; certyfikat Google Analytics 4">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 16L16 8"></path>
+                        <path d="M10 8h6v6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
 
-              <div class="group bg-white rounded-[2rem] p-2 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1),0_20px_25px_-5px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                 <div class="absolute top-6 right-6 bg-[color:var(--white)]/78 backdrop-blur-sm border border-[color:var(--primary)]/35 text-[color:var(--primary-dark)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] text-sm font-bold py-1 px-3 rounded-full z-20 tabular-nums">2023</div>
-                <div class="h-56 rounded-[1.5rem] overflow-hidden relative">
-                     <img src="img/kursy/ga4pro-sprawnymarketing.jpg" alt="Szkolenie Google Analytics 4 zaawansowane" loading="lazy" class="h-full w-full object-cover object-top">
-                     <div class="absolute inset-0 bg-[color:var(--primary)] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                </div>
-                <div class="p-6 pt-8">
-                  <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2 group-hover:text-[color:var(--primary-dark)] transition-colors">Szkolenie z Google Analytics 4 - poziom zaawansowany</h3>
-                  <div class="flex items-center text-sm text-slate-500 font-medium">
-                     <svg class="w-4 h-4 mr-2 text-[color:var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                     Sprawny Marketing
+              <article class="cert-card cert-card--google">
+                <div class="cert-card__visual">
+                  <span class="cert-card__dot" aria-hidden="true"></span>
+                  <span class="cert-card__year">2023</span>
+                  <div class="cert-card__visual-inner">
+                    <p class="cert-card__brand cert-card__brand--compact">Google<br><span>x SGH</span></p>
                   </div>
                 </div>
-              </div>
-               <div class="group bg-white rounded-[2rem] p-2 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1),0_20px_25px_-5px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                 <div class="absolute top-6 right-6 bg-[color:var(--white)]/78 backdrop-blur-sm border border-[color:var(--primary)]/35 text-[color:var(--primary-dark)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] text-sm font-bold py-1 px-3 rounded-full z-20 tabular-nums">2023</div>
-                <div class="h-56 rounded-[1.5rem] overflow-hidden relative">
-                     <img src="img/kursy/googleumiejetnoscijutra.jpg" alt="Kurs umiejętności jutra Google SGH" loading="lazy" class="h-full w-full object-cover object-top">
-                     <div class="absolute inset-0 bg-[color:var(--primary)] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                </div>
-                <div class="p-6 pt-8">
-                  <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2 group-hover:text-[color:var(--primary-dark)] transition-colors">Kurs umiejętności jutra - 8-tygodniowy program</h3>
-                  <div class="flex items-center text-sm text-slate-500 font-medium">
-                     <svg class="w-4 h-4 mr-2 text-[color:var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                     Google / SGH
+                <div class="cert-card__body">
+                  <p class="cert-card__issuer">GOOGLE / SGH</p>
+                  <h3 class="cert-card__title">Kurs umiej&#281;tno&#347;ci jutra - 8-tygodniowy program</h3>
+                  <div class="cert-card__footer">
+                    <span class="cert-card__tag">Marketing cyfrowy</span>
+                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/googleumiejetnoscijutra.jpg" data-certificate-alt="Kurs umiej&#281;tno&#347;ci jutra Google SGH" aria-label="Poka&#380; certyfikat Google SGH">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 16L16 8"></path>
+                        <path d="M10 8h6v6"></path>
+                      </svg>
+                    </button>
                   </div>
                 </div>
-              </div>
-              
-              <div class="group bg-white rounded-[2rem] p-2 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1),0_20px_25px_-5px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                 <div class="absolute top-6 right-6 bg-[color:var(--white)]/78 backdrop-blur-sm border border-[color:var(--primary)]/35 text-[color:var(--primary-dark)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] text-sm font-bold py-1 px-3 rounded-full z-20 tabular-nums">2023</div>
-                <div class="h-56 rounded-[1.5rem] overflow-hidden relative">
-                     <img src="img/kursy/coi.png" alt="Szkolenie Nowy Ty w IT COI" loading="lazy" class="h-full w-full object-cover object-top">
-                     <div class="absolute inset-0 bg-[color:var(--primary)] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                </div>
-                <div class="p-6 pt-8">
-                  <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2 group-hover:text-[color:var(--primary-dark)] transition-colors">Nowy Ty w IT - Prowadzenie projektów w IT</h3>
-                  <div class="flex items-center text-sm text-slate-500 font-medium">
-                     <svg class="w-4 h-4 mr-2 text-[color:var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                     Centralny Ośrodek Informatyki
-                  </div>
-                </div>
-              </div>
+              </article>
 
+              <article class="cert-card cert-card--coi">
+                <div class="cert-card__visual">
+                  <span class="cert-card__dot" aria-hidden="true"></span>
+                  <span class="cert-card__year">2023</span>
+                  <div class="cert-card__visual-inner">
+                    <p class="cert-card__brand">COI</p>
+                  </div>
+                </div>
+                <div class="cert-card__body">
+                  <p class="cert-card__issuer">CENTRALNY O&#346;RODEK INFORMATYKI</p>
+                  <h3 class="cert-card__title">Nowy Ty w IT - Prowadzenie projekt&oacute;w w IT</h3>
+                  <div class="cert-card__footer">
+                    <span class="cert-card__tag">Zarz&#261;dzanie IT</span>
+                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/coi.png" data-certificate-alt="Szkolenie Nowy Ty w IT COI" aria-label="Poka&#380; certyfikat COI">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 16L16 8"></path>
+                        <path d="M10 8h6v6"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
             </div>
 
           </div>
         </section>
 
-                <section class="tools-section" id="umiejetnosci" data-nav-theme="light" aria-labelledby="tools-title">
+        <section class="tools-section" id="umiejetnosci" data-nav-theme="light" aria-labelledby="tools-title">
             <div class="tools-shell">
                 <div class="tools-head">
                     <h2 id="tools-title">Narzędzia</h2>
