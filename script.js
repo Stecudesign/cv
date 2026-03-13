@@ -75,10 +75,14 @@ const buildInlineExperienceHeaders = () => {
     });
 };
 
-burgerMenu.addEventListener('click', () => {
-    mainNav.classList.toggle('is-open');
-    burgerMenu.classList.toggle('is-open');
-});
+buildInlineExperienceHeaders();
+
+if (burgerMenu && mainNav) {
+    burgerMenu.addEventListener('click', () => {
+        mainNav.classList.toggle('is-open');
+        burgerMenu.classList.toggle('is-open');
+    });
+}
 
 if (navLinks.length) {
     const setActiveLink = (hash) => {
@@ -101,8 +105,8 @@ if (navLinks.length) {
     navLinks.forEach((link) => {
         link.addEventListener('click', () => {
             setActiveLink(link.getAttribute('href'));
-            mainNav.classList.remove('is-open');
-            burgerMenu.classList.remove('is-open');
+            mainNav?.classList.remove('is-open');
+            burgerMenu?.classList.remove('is-open');
         });
     });
 

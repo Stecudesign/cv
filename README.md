@@ -41,6 +41,12 @@ Projekt może działać jako:
 
 Otwórz `index.html` w przeglądarce.
 
+## Smoke test
+
+Przed publikacją możesz sprawdzić podstawowe zależności między `index.html` i `script.js`:
+
+`node scripts/smoke-test.js`
+
 ## Repozytorium
 
 `https://github.com/Stecudesign/cv`
