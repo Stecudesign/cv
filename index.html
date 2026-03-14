@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
     <head>
         <meta charset="UTF-8">
@@ -12,6 +12,7 @@
                 theme: {
                     extend: {
                         colors: {
+                            brand: 'var(--primary)',
                             primary: 'var(--primary)',
                             'primary-dark': 'var(--primary-dark)',
                             'text-main': 'var(--text-main)',
@@ -36,7 +37,7 @@
 
         <div class="hero-container" id="o-mnie" data-nav-theme="dark">
 
-            <button class="burger-menu" aria-label="Otwórz menu">
+            <button class="burger-menu border-brand bg-black/20 text-white" aria-label="Otwórz menu">
                 <span class="burger-icon">
                     <span></span>
                     <span></span>
@@ -45,19 +46,19 @@
                 <span class="burger-label">menu</span>
             </button>
 
-            <nav class="main-nav">
+            <nav class="main-nav bg-black/95">
                 <ul>
-                    <li><a href="#o-mnie">O MNIE</a></li>
-                    <li><a href="#doswiadczenie">DOŚWIADCZENIE</a></li>
-                    <li><a href="#projekty">PROJEKTY</a></li>
-                    <li><a href="#umiejetnosci">UMIEJĘTNOŚCI</a></li>
-                    <li><a href="#hobby">HOBBY</a></li>
+                    <li><a class="block py-2.5 text-white" href="#o-mnie">O MNIE</a></li>
+                    <li><a class="block py-2.5 text-white" href="#doswiadczenie">DOŚWIADCZENIE</a></li>
+                    <li><a class="block py-2.5 text-white" href="#projekty">PROJEKTY</a></li>
+                    <li><a class="block py-2.5 text-white" href="#umiejetnosci">UMIEJĘTNOŚCI</a></li>
+                    <li><a class="block py-2.5 text-white" href="#hobby">HOBBY</a></li>
                 </ul>
             </nav>
 
             <main class="main-grid">
 
-                <div class="hero-content">
+                <div class="hero-content px-[18px] pt-[26px] pb-[146px]">
 
                     <div class="image-wrapper">
                         <img src="image_14.png" alt="Portret użytkownika" class="hero-image">
@@ -65,20 +66,20 @@
                         <div class="vignette-overlay"></div>
                     </div>
 
-                    <div class="text-layer">
+                    <div class="text-layer pl-11 pb-0">
                         <h1 class="main-title">
                             Paweł<br>
                             Steckiewicz<br>
-                            <span class="highlight">Digital Expert</span>
+                            <span class="highlight block mt-3 text-brand">Digital Expert</span>
                         </h1>
                         <div class="hero-stats" aria-label="Statystyki">
                             <div class="hero-stat">
                                 <span class="hero-stat-value">+18</span>
-                                <span class="hero-stat-label">lat doświadczenia</span>
+                                <span class="hero-stat-label text-white/70">lat doświadczenia</span>
                             </div>
                             <div class="hero-stat">
                                 <span class="hero-stat-value">+100</span>
-                                <span class="hero-stat-label">projektów</span>
+                                <span class="hero-stat-label text-white/70">projektów</span>
                             </div>
                         </div>
                     </div>
@@ -86,9 +87,9 @@
 
             </main>
 
-            <section class="hero-logo-marquee" aria-label="Logotypy firm">
+            <section class="hero-logo-marquee -mt-[84px] pt-[10px] pb-3 bg-transparent" aria-label="Logotypy firm">
                 <div class="hero-logo-track">
-                    <ul class="hero-logo-list">
+                    <ul class="hero-logo-list px-7">
                         <li class="logo-microsoft"><img src="img/logo/Microsoft-logo.png" alt="Microsoft" loading="lazy"></li>
                         <li class="logo-cksource"><img src="img/logo/cksource.jpg" alt="CKSource" loading="lazy"></li>
                         <li class="logo-orlen"><img src="img/logo/orlen.png" alt="Orlen" loading="lazy"></li>
@@ -99,7 +100,7 @@
                         <li class="logo-play"><img src="img/logo/play-logo.png" alt="Play" loading="lazy"></li>
                         <li class="logo-teva"><img src="img/logo/TevaPharm.svg" alt="Teva Pharmaceuticals" loading="lazy"></li>
                     </ul>
-                    <ul class="hero-logo-list" aria-hidden="true">
+                    <ul class="hero-logo-list px-7" aria-hidden="true">
                         <li class="logo-microsoft"><img src="img/logo/Microsoft-logo.png" alt="" loading="lazy"></li>
                         <li class="logo-cksource"><img src="img/logo/cksource.jpg" alt="" loading="lazy"></li>
                         <li class="logo-orlen"><img src="img/logo/orlen.png" alt="" loading="lazy"></li>
@@ -114,282 +115,282 @@
             </section>
         </div>
 
-        <section class="bento-section bg-bg-light text-text-main py-[var(--section-padding)] px-6 md:px-[60px]" id="doswiadczenie" data-nav-theme="light" aria-labelledby="bento-title">
+        <section class="bento-section bg-bg-light text-text-main py-24 px-6 md:px-16" id="doswiadczenie" data-nav-theme="light" aria-labelledby="bento-title">
             <div class="bento-inner mx-auto w-full max-w-[1440px]">
                 <div class="bento-head mb-12">
-                    <span class="bento-eyebrow">Kariera</span>
-                    <h2 id="bento-title" class="bento-title font-main text-[32px] md:text-[36px] font-bold uppercase tracking-tight">Doświadczenie</h2>
+                    <span class="bento-eyebrow mb-3.5 text-[rgba(38,38,38,0.55)]">Kariera</span>
+                    <h2 id="bento-title" class="bento-title font-main text-3xl md:text-4xl font-bold uppercase tracking-tight text-slate-950">Doświadczenie</h2>
                 </div>
 
                 <div class="exp-features mt-0 flex flex-col gap-6">
-                    <div class="exp-feature-meta flex items-center gap-2.5 text-[13px] font-normal uppercase tracking-[0.06em] text-text-muted">
+                    <div class="exp-feature-meta flex items-center gap-2.5 text-sm font-normal uppercase tracking-wider text-text-muted">
                         <span class="exp-feature-date inline-flex items-center gap-2">05.2023 — obecnie</span>
-                        <span class="exp-feature-sep text-primary">|</span>
+                        <span class="exp-feature-sep text-brand">|</span>
                         <span class="exp-feature-company text-text-main">Teva Pharmaceuticals</span>
                     </div>
-                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-card transition duration-300 hover:-translate-y-[5px] hover:shadow-card-hover md:flex-row">
+                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-[5px] hover:shadow-sm md:flex-row">
                         <div class="exp-feature-media w-[120px] shrink-0 self-start">
                             <img src="img/logo/Teva_Pharmaceuticals_logo.png" alt="Teva Pharmaceuticals" loading="lazy">
                         </div>
                         <div class="exp-feature-content flex grow flex-col gap-3 text-text-main">
-                            <h3 class="exp-feature-role font-main text-[20px] font-semibold leading-[1.35] text-text-main">Starszy specjalista ds. projektów internetowych</h3>
+                            <h3 class="exp-feature-role font-main text-xl font-semibold leading-[1.35] text-text-main">Starszy specjalista ds. projektów internetowych</h3>
                             <div class="job-content-wrapper flex w-full flex-col gap-8 lg:flex-row lg:justify-between lg:gap-10">
-                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-[15px] md:text-[16px] leading-relaxed text-text-main lg:flex-[2] max-w-full">
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Zarządzanie 20 stronami brandowymi na różnych systemach CMS (WordPress, EPI CMS, autorskie CMS-y): teva.pl, migrena.pl, sudocrempolska.pl, calperos.pl, tevamed.pl.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Wdrożenie strategii SEO na stronach produktowych.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Wdrożenie Asystenta AI na stronie migrena.pl.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Współpraca z agencją digitalową przy projektach.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Przygotowywanie stron typu Rich Content oraz prowadzenie kampanii na Ceneo i w aptekach internetowych (współpraca z domem mediowym).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Zarządzanie projektami digital: launch projektu Tell Me Doctor (webinary dla lekarzy), implementacja strategii NPS, redesign stron produktowych przy współpracy z teamem w Chorwacji.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Analiza ruchu na stronach i raporty w Google Analytics, dashboardy w Looker Studio.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Przygotowywanie mailingów do lekarzy w systemach Veeva i Salesforce.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Współpraca z web developerem, działem IT, brand managerami.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Raportowanie do kierownika digital marketingu.</li>
+                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-base md:text-base leading-relaxed text-text-main lg:flex-[2] max-w-full">
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Zarządzanie 20 stronami brandowymi na różnych systemach CMS (WordPress, EPI CMS, autorskie CMS-y): teva.pl, migrena.pl, sudocrempolska.pl, calperos.pl, tevamed.pl.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Wdrożenie strategii SEO na stronach produktowych.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Wdrożenie Asystenta AI na stronie migrena.pl.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Współpraca z agencją digitalową przy projektach.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Przygotowywanie stron typu Rich Content oraz prowadzenie kampanii na Ceneo i w aptekach internetowych (współpraca z domem mediowym).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Zarządzanie projektami digital: launch projektu Tell Me Doctor (webinary dla lekarzy), implementacja strategii NPS, redesign stron produktowych przy współpracy z teamem w Chorwacji.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Analiza ruchu na stronach i raporty w Google Analytics, dashboardy w Looker Studio.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Przygotowywanie mailingów do lekarzy w systemach Veeva i Salesforce.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Współpraca z web developerem, działem IT, brand managerami.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Raportowanie do kierownika digital marketingu.</li>
                                 </ul>
 
                                 <div class="job-tech-stack lg:flex-1 lg:min-w-[220px] lg:border-l lg:border-black/10 lg:pl-8">
-                                    <div class="tech-stack-title mb-3 font-main text-[13px] font-normal uppercase tracking-[0.08em] text-text-muted">Stack & Narzędzia</div>
+                                    <div class="tech-stack-title mb-3 font-main text-sm font-normal uppercase tracking-wider text-text-muted">Stack & Narzędzia</div>
                                     <div class="tags-container flex flex-wrap gap-2">
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">WordPress</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">EPI CMS</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Salesforce</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Veeva</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Google Analytics 4</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Looker Studio</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">AI / ChatGPT</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">SEO Strategy</span>
+                                        <span class="tech-tag">WordPress</span>
+                                        <span class="tech-tag">EPI CMS</span>
+                                        <span class="tech-tag">Salesforce</span>
+                                        <span class="tech-tag">Veeva</span>
+                                        <span class="tech-tag">Google Analytics 4</span>
+                                        <span class="tech-tag">Looker Studio</span>
+                                        <span class="tech-tag">AI / ChatGPT</span>
+                                        <span class="tech-tag">SEO Strategy</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <div class="exp-feature-meta flex items-center gap-2.5 text-[13px] font-normal uppercase tracking-[0.06em] text-text-muted">
+                    <div class="exp-feature-meta flex items-center gap-2.5 text-sm font-normal uppercase tracking-wider text-text-muted">
                         <span class="exp-feature-date inline-flex items-center gap-2">02.2022 — 03.2023</span>
-                        <span class="exp-feature-sep text-primary">|</span>
+                        <span class="exp-feature-sep text-brand">|</span>
                         <span class="exp-feature-company text-text-main">CKSource (ckeditor.com)</span>
                     </div>
-                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-card transition duration-300 hover:-translate-y-[5px] hover:shadow-card-hover md:flex-row">
+                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-[5px] hover:shadow-sm md:flex-row">
                         <div class="exp-feature-media w-[120px] shrink-0 self-start">
                             <img src="img/logo/cksource.jpg" alt="CKSource" loading="lazy">
                         </div>
                         <div class="exp-feature-content flex grow flex-col gap-3 text-text-main">
-                            <h3 class="exp-feature-role font-main text-[20px] font-semibold leading-[1.35] text-text-main">Website product owner</h3>
+                            <h3 class="exp-feature-role font-main text-xl font-semibold leading-[1.35] text-text-main">Website product owner</h3>
                             <div class="job-content-wrapper flex w-full flex-col gap-8 lg:flex-row lg:justify-between lg:gap-10">
-                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-[15px] md:text-[16px] leading-relaxed text-text-main lg:flex-[2] max-w-full">
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Redesign strony: od koncepcji po wdrożenie nowej strony ckeditor.com.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Launch nowego produktu CKBox na stronie www.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Tworzenie makiet UX stron w Figmie.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Zarządzanie rozproszonym zespołem deweloperów, grafików, testerów, copywriterów (codzienna komunikacja na Slacku).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Optymalizacja powdrożeniowa pod kątem SEO i UX.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Analiza ruchu na stronie i raporty w Google Analytics, raporty w Looker Studio.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Testy A/B wprowadzanych zmian (Google Optimizer, Hotjar).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Zarządzanie backlogiem projektu.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Codzienna współpraca z zespołem, raportowanie do dyrektora marketingu.</li>
+                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-base md:text-base leading-relaxed text-text-main lg:flex-[2] max-w-full">
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Redesign strony: od koncepcji po wdrożenie nowej strony ckeditor.com.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Launch nowego produktu CKBox na stronie www.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Tworzenie makiet UX stron w Figmie.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Zarządzanie rozproszonym zespołem deweloperów, grafików, testerów, copywriterów (codzienna komunikacja na Slacku).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Optymalizacja powdrożeniowa pod kątem SEO i UX.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Analiza ruchu na stronie i raporty w Google Analytics, raporty w Looker Studio.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Testy A/B wprowadzanych zmian (Google Optimizer, Hotjar).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Zarządzanie backlogiem projektu.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Codzienna współpraca z zespołem, raportowanie do dyrektora marketingu.</li>
                                 </ul>
 
                                 <div class="job-tech-stack lg:flex-1 lg:min-w-[220px] lg:border-l lg:border-black/10 lg:pl-8">
-                                    <div class="tech-stack-title mb-3 font-main text-[13px] font-normal uppercase tracking-[0.08em] text-text-muted">Narzędzia</div>
+                                    <div class="tech-stack-title mb-3 font-main text-sm font-normal uppercase tracking-wider text-text-muted">Narzędzia</div>
                                     <div class="tags-container flex flex-wrap gap-2">
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Product Ownership</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Figma</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">SEO & UX</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Google Analytics</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Hotjar</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">A/B Testing</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Slack</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Jira</span>
+                                        <span class="tech-tag">Product Ownership</span>
+                                        <span class="tech-tag">Figma</span>
+                                        <span class="tech-tag">SEO & UX</span>
+                                        <span class="tech-tag">Google Analytics</span>
+                                        <span class="tech-tag">Hotjar</span>
+                                        <span class="tech-tag">A/B Testing</span>
+                                        <span class="tech-tag">Slack</span>
+                                        <span class="tech-tag">Jira</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <div class="exp-feature-meta flex items-center gap-2.5 text-[13px] font-normal uppercase tracking-[0.06em] text-text-muted">
+                    <div class="exp-feature-meta flex items-center gap-2.5 text-sm font-normal uppercase tracking-wider text-text-muted">
                         <span class="exp-feature-date inline-flex items-center gap-2">11.2021 — 02.2022</span>
-                        <span class="exp-feature-sep text-primary">|</span>
+                        <span class="exp-feature-sep text-brand">|</span>
                         <span class="exp-feature-company text-text-main">Sigma BIS S.A. (orlen.pl)</span>
                     </div>
-                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-card transition duration-300 hover:-translate-y-[5px] hover:shadow-card-hover md:flex-row">
+                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-[5px] hover:shadow-sm md:flex-row">
                         <div class="exp-feature-media w-[120px] shrink-0 self-start">
                             <img src="img/logo/orlen.png" alt="Orlen" loading="lazy">
                         </div>
                         <div class="exp-feature-content flex grow flex-col gap-3 text-text-main">
-                            <h3 class="exp-feature-role font-main text-[20px] font-semibold leading-[1.35] text-text-main">Senior CMS &amp; content specialist</h3>
+                            <h3 class="exp-feature-role font-main text-xl font-semibold leading-[1.35] text-text-main">Senior CMS &amp; content specialist</h3>
                             <div class="job-content-wrapper flex w-full flex-col gap-8 lg:flex-row lg:justify-between lg:gap-10">
-                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-[15px] md:text-[16px] leading-relaxed text-text-main lg:flex-[2] max-w-full">
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Bieżąca obsługa strony orlen.pl (CMS Adobe AEM).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Bieżąca obsługa strony stopcafe.pl (WordPress CMS).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Bieżąca obsługa strony sigma-media.pl (WordPress CMS).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Codzienna współpraca z klientem, raportowanie do członka zarządu.</li>
+                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-base md:text-base leading-relaxed text-text-main lg:flex-[2] max-w-full">
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Bieżąca obsługa strony orlen.pl (CMS Adobe AEM).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Bieżąca obsługa strony stopcafe.pl (WordPress CMS).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Bieżąca obsługa strony sigma-media.pl (WordPress CMS).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Codzienna współpraca z klientem, raportowanie do członka zarządu.</li>
                                 </ul>
 
                                 <div class="job-tech-stack lg:flex-1 lg:min-w-[220px] lg:border-l lg:border-black/10 lg:pl-8">
-                                    <div class="tech-stack-title mb-3 font-main text-[13px] font-normal uppercase tracking-[0.08em] text-text-muted">Technologie</div>
+                                    <div class="tech-stack-title mb-3 font-main text-sm font-normal uppercase tracking-wider text-text-muted">Technologie</div>
                                     <div class="tags-container flex flex-wrap gap-2">
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Adobe AEM</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">WordPress</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">CMS Management</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Corporate Web</span>
+                                        <span class="tech-tag">Adobe AEM</span>
+                                        <span class="tech-tag">WordPress</span>
+                                        <span class="tech-tag">CMS Management</span>
+                                        <span class="tech-tag">Corporate Web</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <div class="exp-feature-meta flex items-center gap-2.5 text-[13px] font-normal uppercase tracking-[0.06em] text-text-muted">
+                    <div class="exp-feature-meta flex items-center gap-2.5 text-sm font-normal uppercase tracking-wider text-text-muted">
                         <span class="exp-feature-date inline-flex items-center gap-2">03.2016 — 10.2021</span>
-                        <span class="exp-feature-sep text-primary">|</span>
+                        <span class="exp-feature-sep text-brand">|</span>
                         <span class="exp-feature-company text-text-main">Huawei (consumer.huawei.com)</span>
                     </div>
-                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-card transition duration-300 hover:-translate-y-[5px] hover:shadow-card-hover md:flex-row">
+                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-[5px] hover:shadow-sm md:flex-row">
                         <div class="exp-feature-media w-[120px] shrink-0 self-start">
                             <img src="img/logo/huawei-logo.png" alt="Huawei" loading="lazy">
                         </div>
                         <div class="exp-feature-content flex grow flex-col gap-3 text-text-main">
-                            <h3 class="exp-feature-role font-main text-[20px] font-semibold leading-[1.35] text-text-main">Regional Digital Manager</h3>
+                            <h3 class="exp-feature-role font-main text-xl font-semibold leading-[1.35] text-text-main">Regional Digital Manager</h3>
                             <div class="job-content-wrapper flex w-full flex-col gap-8 lg:flex-row lg:justify-between lg:gap-10">
-                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-[15px] md:text-[16px] leading-relaxed text-text-main lg:flex-[2] max-w-full">
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Zarządzanie i rozwój stron Huawei dla rynków CEE &amp; Nordic (24 kraje) w CMS Adobe AEM.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Stworzenie procesów współpracy z krajami i agencjami.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Przygotowywanie landing page pod kampanie digitalowe.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Wsparcie komunikacji marketingowej w kanale digital.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Zarządzanie kampaniami display/programmatic w regionie CEE &amp; Nordic.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Współpraca z działem IT w Chinach oraz zarządzanie pracą agencji.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Przygotowywanie contentu do kampanii na FB/YT (m.in. wprowadzenie modeli Huawei P40, Mate 20, P10 i P9; kampania #BePresent z nagrodą Srebrnej Effie; back to school; summer campaign) we współpracy z DDB i Facebook Polska.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Analiza ruchu na stronie w Google Analytics.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Optymalizacja stron pod kątem SEO, UX, Pagespeed.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Współpraca przy redesignach stron Huawei.</li>
+                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-base md:text-base leading-relaxed text-text-main lg:flex-[2] max-w-full">
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Zarządzanie i rozwój stron Huawei dla rynków CEE &amp; Nordic (24 kraje) w CMS Adobe AEM.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Stworzenie procesów współpracy z krajami i agencjami.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Przygotowywanie landing page pod kampanie digitalowe.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Wsparcie komunikacji marketingowej w kanale digital.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Zarządzanie kampaniami display/programmatic w regionie CEE &amp; Nordic.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Współpraca z działem IT w Chinach oraz zarządzanie pracą agencji.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Przygotowywanie contentu do kampanii na FB/YT (m.in. wprowadzenie modeli Huawei P40, Mate 20, P10 i P9; kampania #BePresent z nagrodą Srebrnej Effie; back to school; summer campaign) we współpracy z DDB i Facebook Polska.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Analiza ruchu na stronie w Google Analytics.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Optymalizacja stron pod kątem SEO, UX, Pagespeed.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Współpraca przy redesignach stron Huawei.</li>
                                 </ul>
 
                                 <div class="job-tech-stack lg:flex-1 lg:min-w-[220px] lg:border-l lg:border-black/10 lg:pl-8">
-                                    <div class="tech-stack-title mb-3 font-main text-[13px] font-normal uppercase tracking-[0.08em] text-text-muted">Obszary</div>
+                                    <div class="tech-stack-title mb-3 font-main text-sm font-normal uppercase tracking-wider text-text-muted">Obszary</div>
                                     <div class="tags-container flex flex-wrap gap-2">
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Adobe AEM</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Digital Strategy</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Programmatic</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">SEO / UX</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Google Analytics</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Social Media</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Team Mgmt (24 countries)</span>
+                                        <span class="tech-tag">Adobe AEM</span>
+                                        <span class="tech-tag">Digital Strategy</span>
+                                        <span class="tech-tag">Programmatic</span>
+                                        <span class="tech-tag">SEO / UX</span>
+                                        <span class="tech-tag">Google Analytics</span>
+                                        <span class="tech-tag">Social Media</span>
+                                        <span class="tech-tag">Team Mgmt (24 countries)</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <div class="exp-feature-meta flex items-center gap-2.5 text-[13px] font-normal uppercase tracking-[0.06em] text-text-muted">
+                    <div class="exp-feature-meta flex items-center gap-2.5 text-sm font-normal uppercase tracking-wider text-text-muted">
                         <span class="exp-feature-date inline-flex items-center gap-2">02.2015 — 02.2016</span>
-                        <span class="exp-feature-sep text-primary">|</span>
+                        <span class="exp-feature-sep text-brand">|</span>
                         <span class="exp-feature-company text-text-main">ITI Neovision (ncplus.pl)</span>
                     </div>
-                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-card transition duration-300 hover:-translate-y-[5px] hover:shadow-card-hover md:flex-row">
+                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-[5px] hover:shadow-sm md:flex-row">
                         <div class="exp-feature-media w-[120px] shrink-0 self-start">
                             <img src="img/logo/ncplus.png" alt="NC+" loading="lazy">
                         </div>
                         <div class="exp-feature-content flex grow flex-col gap-3 text-text-main">
-                            <h3 class="exp-feature-role font-main text-[20px] font-semibold leading-[1.35] text-text-main">Specjalista ds. projektów internetowych</h3>
+                            <h3 class="exp-feature-role font-main text-xl font-semibold leading-[1.35] text-text-main">Specjalista ds. projektów internetowych</h3>
                             <div class="job-content-wrapper flex w-full flex-col gap-8 lg:flex-row lg:justify-between lg:gap-10">
-                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-[15px] md:text-[16px] leading-relaxed text-text-main lg:flex-[2] max-w-full">
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Zarządzanie i rozwój strony ncplus.pl (CMS Sitecore 8.0).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Wsparcie dla działu komunikacji przy kampaniach e-marketingowych.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Współpraca z klientem wewnętrznym (HR, CRM, Programming, Kreacja, Prawny, e-commerce) oraz zewnętrznym (HBO, Disney, dostawca IT).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Przygotowywanie landing page z działem Kreacji i dostawcą technologicznym.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Optymalizacja stron pod kątem SEO i UX.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Analiza i wnioski z ruchu na stronie (Google Analytics).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Przygotowywanie kampanii e-mailingowych (kalendarze wysyłek, koncepcja, definiowanie kampanii, analiza wyników, optymalizacja).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Przygotowywanie e-magazynu dla klientów ncplus.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Projekty usprawniania funkcjonalności mechanizmów Sitecore oraz strony www.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Drobne prace graficzne w Photoshopie.</li>
+                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-base md:text-base leading-relaxed text-text-main lg:flex-[2] max-w-full">
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Zarządzanie i rozwój strony ncplus.pl (CMS Sitecore 8.0).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Wsparcie dla działu komunikacji przy kampaniach e-marketingowych.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Współpraca z klientem wewnętrznym (HR, CRM, Programming, Kreacja, Prawny, e-commerce) oraz zewnętrznym (HBO, Disney, dostawca IT).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Przygotowywanie landing page z działem Kreacji i dostawcą technologicznym.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Optymalizacja stron pod kątem SEO i UX.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Analiza i wnioski z ruchu na stronie (Google Analytics).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Przygotowywanie kampanii e-mailingowych (kalendarze wysyłek, koncepcja, definiowanie kampanii, analiza wyników, optymalizacja).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Przygotowywanie e-magazynu dla klientów ncplus.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Projekty usprawniania funkcjonalności mechanizmów Sitecore oraz strony www.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Drobne prace graficzne w Photoshopie.</li>
                                 </ul>
 
                                 <div class="job-tech-stack lg:flex-1 lg:min-w-[220px] lg:border-l lg:border-black/10 lg:pl-8">
-                                    <div class="tech-stack-title mb-3 font-main text-[13px] font-normal uppercase tracking-[0.08em] text-text-muted">Narzędzia</div>
+                                    <div class="tech-stack-title mb-3 font-main text-sm font-normal uppercase tracking-wider text-text-muted">Narzędzia</div>
                                     <div class="tags-container flex flex-wrap gap-2">
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Sitecore CMS</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">E-mail Marketing</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Google Analytics</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Photoshop</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">SEO / UX</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Project Management</span>
+                                        <span class="tech-tag">Sitecore CMS</span>
+                                        <span class="tech-tag">E-mail Marketing</span>
+                                        <span class="tech-tag">Google Analytics</span>
+                                        <span class="tech-tag">Photoshop</span>
+                                        <span class="tech-tag">SEO / UX</span>
+                                        <span class="tech-tag">Project Management</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <div class="exp-feature-meta flex items-center gap-2.5 text-[13px] font-normal uppercase tracking-[0.06em] text-text-muted">
+                    <div class="exp-feature-meta flex items-center gap-2.5 text-sm font-normal uppercase tracking-wider text-text-muted">
                         <span class="exp-feature-date inline-flex items-center gap-2">09.2014 — 01.2015</span>
-                        <span class="exp-feature-sep text-primary">|</span>
+                        <span class="exp-feature-sep text-brand">|</span>
                         <span class="exp-feature-company text-text-main">Whiteoctopus (nike.com)</span>
                     </div>
-                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-card transition duration-300 hover:-translate-y-[5px] hover:shadow-card-hover md:flex-row">
+                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-[5px] hover:shadow-sm md:flex-row">
                         <div class="exp-feature-media w-[120px] shrink-0 self-start">
                             <img src="img/logo/002-nike-logos-swoosh-white.jpg" alt="Nike" loading="lazy">
                         </div>
                         <div class="exp-feature-content flex grow flex-col gap-3 text-text-main">
-                            <h3 class="exp-feature-role font-main text-[20px] font-semibold leading-[1.35] text-text-main">Project manager</h3>
+                            <h3 class="exp-feature-role font-main text-xl font-semibold leading-[1.35] text-text-main">Project manager</h3>
                             <div class="job-content-wrapper flex w-full flex-col gap-8 lg:flex-row lg:justify-between lg:gap-10">
-                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-[15px] md:text-[16px] leading-relaxed text-text-main lg:flex-[2] max-w-full">
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Bieżąca obsługa strony nike.com.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Tworzenie oraz wysyłka mailingów.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Projekt e-commerce dla oficjalnego sklepu Nike (R-gol.com).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Wdrożenie aplikacji Nike Training na Facebooku.</li>
+                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-base md:text-base leading-relaxed text-text-main lg:flex-[2] max-w-full">
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Bieżąca obsługa strony nike.com.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Tworzenie oraz wysyłka mailingów.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Projekt e-commerce dla oficjalnego sklepu Nike (R-gol.com).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Wdrożenie aplikacji Nike Training na Facebooku.</li>
                                 </ul>
 
                                 <div class="job-tech-stack lg:flex-1 lg:min-w-[220px] lg:border-l lg:border-black/10 lg:pl-8">
-                                    <div class="tech-stack-title mb-3 font-main text-[13px] font-normal uppercase tracking-[0.08em] text-text-muted">Technologie</div>
+                                    <div class="tech-stack-title mb-3 font-main text-sm font-normal uppercase tracking-wider text-text-muted">Technologie</div>
                                     <div class="tags-container flex flex-wrap gap-2">
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">E-commerce</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Mailing Systems</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Facebook Apps</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Retail Digital</span>
+                                        <span class="tech-tag">E-commerce</span>
+                                        <span class="tech-tag">Mailing Systems</span>
+                                        <span class="tech-tag">Facebook Apps</span>
+                                        <span class="tech-tag">Retail Digital</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <div class="exp-feature-meta flex items-center gap-2.5 text-[13px] font-normal uppercase tracking-[0.06em] text-text-muted">
+                    <div class="exp-feature-meta flex items-center gap-2.5 text-sm font-normal uppercase tracking-wider text-text-muted">
                         <span class="exp-feature-date inline-flex items-center gap-2">10.2010 — 08.2014</span>
-                        <span class="exp-feature-sep text-primary">|</span>
+                        <span class="exp-feature-sep text-brand">|</span>
                         <span class="exp-feature-company text-text-main">Wunderman Polska (nokia.pl)</span>
                     </div>
-                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-card transition duration-300 hover:-translate-y-[5px] hover:shadow-card-hover md:flex-row">
+                    <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-[5px] hover:shadow-sm md:flex-row">
                         <div class="exp-feature-media w-[120px] shrink-0 self-start">
                             <img src="img/logo/nokia-logo.png" alt="Nokia" loading="lazy">
                         </div>
                         <div class="exp-feature-content flex grow flex-col gap-3 text-text-main">
-                            <h3 class="exp-feature-role font-main text-[20px] font-semibold leading-[1.35] text-text-main">Digital Producer</h3>
+                            <h3 class="exp-feature-role font-main text-xl font-semibold leading-[1.35] text-text-main">Digital Producer</h3>
                             <div class="job-content-wrapper flex w-full flex-col gap-8 lg:flex-row lg:justify-between lg:gap-10">
-                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-[15px] md:text-[16px] leading-relaxed text-text-main lg:flex-[2] max-w-full">
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Projekty związane z utrzymaniem i rozwojem strony www.nokia.pl.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Lokalne i globalne akcje e-marketingowe (koncepcja, wdrożenie, analiza).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Wdrożenie i rozwój kanału e-commerce na nokia.pl (współpraca z Play, Orange, Plus, T-Mobile oraz lokalnymi sklepami Nokia).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Utrzymanie stron Nokia w krajach CEE (Czechy, Słowacja, Bułgaria, Chorwacja).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Przygotowywanie oraz wysyłka kampanii mailingowych.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Kontakt z klientem lokalnym i globalnym (Nokia Global, Nokia Czechy).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Współpraca z PM z Nokia Global, lokalnie grafikami oraz programistami.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Kilkukrotny redesign strony nokia.pl.</li>
+                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-base md:text-base leading-relaxed text-text-main lg:flex-[2] max-w-full">
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Projekty związane z utrzymaniem i rozwojem strony www.nokia.pl.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Lokalne i globalne akcje e-marketingowe (koncepcja, wdrożenie, analiza).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Wdrożenie i rozwój kanału e-commerce na nokia.pl (współpraca z Play, Orange, Plus, T-Mobile oraz lokalnymi sklepami Nokia).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Utrzymanie stron Nokia w krajach CEE (Czechy, Słowacja, Bułgaria, Chorwacja).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Przygotowywanie oraz wysyłka kampanii mailingowych.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Kontakt z klientem lokalnym i globalnym (Nokia Global, Nokia Czechy).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Współpraca z PM z Nokia Global, lokalnie grafikami oraz programistami.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Kilkukrotny redesign strony nokia.pl.</li>
                                 </ul>
 
                                 <div class="job-tech-stack lg:flex-1 lg:min-w-[220px] lg:border-l lg:border-black/10 lg:pl-8">
-                                    <div class="tech-stack-title mb-3 font-main text-[13px] font-normal uppercase tracking-[0.08em] text-text-muted">Obszary</div>
+                                    <div class="tech-stack-title mb-3 font-main text-sm font-normal uppercase tracking-wider text-text-muted">Obszary</div>
                                     <div class="tags-container flex flex-wrap gap-2">
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Web Development</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">E-commerce</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Global Campaigns</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Email Marketing</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">CEE Region</span>
+                                        <span class="tech-tag">Web Development</span>
+                                        <span class="tech-tag">E-commerce</span>
+                                        <span class="tech-tag">Global Campaigns</span>
+                                        <span class="tech-tag">Email Marketing</span>
+                                        <span class="tech-tag">CEE Region</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <div class="exp-feature-meta flex items-center gap-2.5 text-[13px] font-normal uppercase tracking-[0.06em] text-text-muted">
+                    <div class="exp-feature-meta flex items-center gap-2.5 text-sm font-normal uppercase tracking-wider text-text-muted">
                         <span class="exp-feature-date inline-flex items-center gap-2">09.2007 — 10.2010</span>
-                        <span class="exp-feature-sep text-primary">|</span>
+                        <span class="exp-feature-sep text-brand">|</span>
                         <span class="exp-feature-company text-text-main">Play (play.pl)</span>
                     </div>
                     <article class="exp-feature group flex flex-col gap-10 rounded-xl border border-black/5 bg-white p-8 shadow-card transition duration-300 hover:-translate-y-[5px] hover:shadow-card-hover md:flex-row">
@@ -397,28 +398,28 @@
                             <img src="img/logo/play-logo.png" alt="Play" loading="lazy">
                         </div>
                         <div class="exp-feature-content flex grow flex-col gap-3 text-text-main">
-                            <h3 class="exp-feature-role font-main text-[20px] font-semibold leading-[1.35] text-text-main">Specjalista ds. rozwiązań internetowych</h3>
+                            <h3 class="exp-feature-role font-main text-xl font-semibold leading-[1.35] text-text-main">Specjalista ds. rozwiązań internetowych</h3>
                             <div class="job-content-wrapper flex w-full flex-col gap-8 lg:flex-row lg:justify-between lg:gap-10">
-                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-[15px] md:text-[16px] leading-relaxed text-text-main lg:flex-[2] max-w-full">
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Aktualizacja i rozbudowa strony play.pl, dlafirm.play.pl, rozwój strony korporacyjnej.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Prowadzenie projektów e-marketingowych związanych z wprowadzeniem nowych ofert, promocji oraz usług.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Projekty e-marketingowe na www związane z promocją i nowymi ofertami.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Projekty e-commerce wspierające sprzedaż oferty oraz telefonów przez kanał www.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Optymalizacja serwisu pod kątem SEO i UX.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Rozwój portfolio telefonów na stronach www (skrócenie ścieżki sprzedaży, wzrost sprzedaży oferty przez kanał online).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Współpraca z agencją interaktywną K2, dostawcą technologicznym Asseco oraz dostawcą IT Pretius.</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Współpraca przy projektach z klientem wewnętrznym (IT, dział komunikacji, dział handset, dział HR).</li>
-                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-primary">Udział w 3 dużych redesignach portalu oraz wdrożeniu e-shop.</li>
+                                <ul class="exp-feature-list flex list-none flex-col gap-2.5 p-0 text-base md:text-base leading-relaxed text-text-main lg:flex-[2] max-w-full">
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Aktualizacja i rozbudowa strony play.pl, dlafirm.play.pl, rozwój strony korporacyjnej.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Prowadzenie projektów e-marketingowych związanych z wprowadzeniem nowych ofert, promocji oraz usług.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Projekty e-marketingowe na www związane z promocją i nowymi ofertami.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Projekty e-commerce wspierające sprzedaż oferty oraz telefonów przez kanał www.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Optymalizacja serwisu pod kątem SEO i UX.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Rozwój portfolio telefonów na stronach www (skrócenie ścieżki sprzedaży, wzrost sprzedaży oferty przez kanał online).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Współpraca z agencją interaktywną K2, dostawcą technologicznym Asseco oraz dostawcą IT Pretius.</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Współpraca przy projektach z klientem wewnętrznym (IT, dział komunikacji, dział handset, dział HR).</li>
+                                    <li class="relative mb-0 pl-5 before:absolute before:left-0 before:top-[0.55em] before:h-2 before:w-2 before:rounded-[2px] before:bg-brand">Udział w 3 dużych redesignach portalu oraz wdrożeniu e-shop.</li>
                                 </ul>
 
                                 <div class="job-tech-stack lg:flex-1 lg:min-w-[220px] lg:border-l lg:border-black/10 lg:pl-8">
-                                    <div class="tech-stack-title mb-3 font-main text-[13px] font-normal uppercase tracking-[0.08em] text-text-muted">Technologie</div>
+                                    <div class="tech-stack-title mb-3 font-main text-sm font-normal uppercase tracking-wider text-text-muted">Technologie</div>
                                     <div class="tags-container flex flex-wrap gap-2">
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">E-commerce</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">SEO / UX</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">E-shop Implementation</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Web Development</span>
-                                        <span class="tech-tag inline-flex rounded-md border border-[#E7E7E7] bg-[#F2F2F2] px-2.5 py-1.5 font-main text-[13px] font-normal text-text-main transition hover:border-primary-dark hover:bg-primary-dark hover:text-white">Vendor Management</span>
+                                        <span class="tech-tag">E-commerce</span>
+                                        <span class="tech-tag">SEO / UX</span>
+                                        <span class="tech-tag">E-shop Implementation</span>
+                                        <span class="tech-tag">Web Development</span>
+                                        <span class="tech-tag">Vendor Management</span>
                                     </div>
                                 </div>
                             </div>
@@ -428,16 +429,16 @@
             </div>
         </section>
 
-        <section class="projects-section" id="projekty" data-nav-theme="light" aria-labelledby="projects-title">
-            <div class="projects-head">
-                <span class="projects-eyebrow">Wybrane realizacje</span>
-                <h2 id="projects-title" class="projects-title">Projekty</h2>
-                <p class="projects-lead">Bento grid inspirowany edytorialnym layoutem: mocne kadry, krótki opis i wyraźna hierarchia najważniejszych realizacji.</p>
+        <section class="projects-section bg-slate-50 px-8 py-24 text-neutral-900" id="projekty" data-nav-theme="light" aria-labelledby="projects-title">
+            <div class="projects-head w-full mx-auto mb-12">
+                <span class="projects-eyebrow mb-3 inline-flex text-[rgba(23,23,23,0.6)]">Wybrane realizacje</span>
+                <h2 id="projects-title" class="projects-title text-slate-950">Projekty</h2>
+                <p class="projects-lead mt-3.5 text-[rgba(23,23,23,0.7)]">Bento grid inspirowany edytorialnym layoutem: mocne kadry, krótki opis i wyraźna hierarchia najważniejszych realizacji.</p>
             </div>
             <div class="projects-grid">
-                <article class="project-card project-card--video">
+                <article class="project-card project-card--video border border-white/30 bg-neutral-900">
                     <button
-                        class="project-video-trigger"
+                        class="project-video-trigger p-0 bg-transparent"
                         type="button"
                         data-video-open
                         data-video-src="video/robertlewandowski-video.mp4"
@@ -446,51 +447,51 @@
                         <video class="project-video-thumb" muted loop playsinline preload="metadata" poster="video/rl-cover.jpg">
                             <source src="video/robertlewandowski-video.mp4" type="video/mp4">
                         </video>
-                        <span class="project-video-overlay">
+                        <span class="project-video-overlay left-[30px] right-[30px] bottom-[30px] gap-5">
                             <span class="project-copy">
-                                <span class="project-kicker">Kampania premium</span>
-                                <span class="project-title">Huawei Campaign Film</span>
-                                <span class="project-tagline">Produkcja video z naciskiem na emocję, tempo i ekspozycję marki.</span>
+                                <span class="project-kicker text-white/80">Kampania premium</span>
+                                <span class="project-title text-white font-extrabold">Huawei Campaign Film</span>
+                                <span class="project-tagline text-white/80">Produkcja video z naciskiem na emocję, tempo i ekspozycję marki.</span>
                             </span>
                             <span class="project-video-play" aria-hidden="true"></span>
                             <span class="project-meta">
-                                <span class="project-meta-tag">Video Production</span>
+                                <span class="project-meta-tag mt-3.5 px-[13px] py-[9px] bg-white/10 text-slate-950">Video Production</span>
                             </span>
                         </span>
                     </button>
                 </article>
-                <article class="project-card project-card--migrena">
+                <article class="project-card project-card--migrena border border-white/30 bg-neutral-900">
                     <img src="img/projekty/laptop-migrena.png" alt="Projekt Migrena na laptopie" loading="lazy">
-                    <div class="project-meta">
-                        <span class="project-kicker">Produkt i UX</span>
-                        <span class="project-title">migrena.pl</span>
-                        <span class="project-meta-tag">Website</span>
+                    <div class="project-meta left-[30px] right-[30px] bottom-[30px] gap-2">
+                        <span class="project-kicker text-white/80">Produkt i UX</span>
+                        <span class="project-title text-white font-extrabold">migrena.pl</span>
+                        <span class="project-meta-tag mt-3.5 px-[13px] py-[9px] bg-white/10 text-slate-950">Website</span>
                     </div>
                 </article>
-                <article class="project-card project-card--play">
+                <article class="project-card project-card--play border border-white/30 bg-neutral-900">
                     <img src="img/projekty/laptop-przejdzdoplay.png" alt="Projekt Przejdź do Play na laptopie" loading="lazy">
-                    <div class="project-meta">
-                        <span class="project-kicker">Kampania sprzedażowa</span>
-                        <span class="project-title">przejdzdoplay.pl</span>
-                        <span class="project-meta-tag">Website</span>
+                    <div class="project-meta left-[30px] right-[30px] bottom-[30px] gap-2">
+                        <span class="project-kicker text-white/80">Kampania sprzedażowa</span>
+                        <span class="project-title text-white font-extrabold">przejdzdoplay.pl</span>
+                        <span class="project-meta-tag mt-3.5 px-[13px] py-[9px] bg-white/10 text-slate-950">Website</span>
                     </div>
                 </article>
-                <article class="project-card project-card--ckeditor">
+                <article class="project-card project-card--ckeditor border border-white/30 bg-neutral-900">
                     <img src="img/projekty/laptop-ckeditor.png" alt="Projekt CKEditor na laptopie" loading="lazy">
-                    <div class="project-meta">
-                        <span class="project-kicker">SaaS i design</span>
-                        <span class="project-title">ckeditor.com</span>
-                        <span class="project-meta-tag">Website</span>
+                    <div class="project-meta left-[30px] right-[30px] bottom-[30px] gap-2">
+                        <span class="project-kicker text-white/80">SaaS i design</span>
+                        <span class="project-title text-white font-extrabold">ckeditor.com</span>
+                        <span class="project-meta-tag mt-3.5 px-[13px] py-[9px] bg-white/10 text-slate-950">Website</span>
                     </div>
                 </article>
-                <article class="project-card project-card--yt">
+                <article class="project-card project-card--yt border border-white/30 bg-neutral-900">
                     <video class="project-yt-video" autoplay muted playsinline preload="metadata">
                         <source src="video/nokia-drone.mp4" type="video/mp4">
                     </video>
-                    <div class="project-meta">
-                        <span class="project-kicker">Technologia jutra</span>
-                        <span class="project-title">Kampania Nokia Copter</span>
-                        <span class="project-meta-tag">Video</span>
+                    <div class="project-meta left-[30px] right-[30px] bottom-[30px] gap-2">
+                        <span class="project-kicker text-white/80">Technologia jutra</span>
+                        <span class="project-title text-white font-extrabold">Kampania Nokia Copter</span>
+                        <span class="project-meta-tag mt-3.5 px-[13px] py-[9px] bg-white/10 text-slate-950">Video</span>
                     </div>
                 </article>
             </div>
@@ -523,8 +524,8 @@
 
           <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-20">
-              <h2 class="text-[color:var(--primary)] font-semibold tracking-wider uppercase text-sm mb-3">Ci&#261;g&#322;y rozw&oacute;j</h2>
-              <p class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">Certyfikaty i Szkolenia</p>
+              <h2 class="text-brand font-semibold tracking-wider uppercase text-sm mb-3">Ci&#261;g&#322;y rozw&oacute;j</h2>
+              <p class="text-4xl md:text-5xl font-bold text-slate-950 tracking-tight">Certyfikaty i Szkolenia</p>
               <p class="mt-4 text-lg text-slate-600">Inwestycja w najnowsze technologie i kompetencje przysz&#322;o&#347;ci.</p>
             </div>
 
@@ -537,12 +538,12 @@
                     <p class="cert-card__brand">SENSAI</p>
                   </div>
                 </div>
-                <div class="cert-card__body">
-                  <p class="cert-card__issuer">SENSAI ACADEMY</p>
+                <div class="cert-card__body px-5 pt-[22px] pb-5 text-slate-900">
+                  <p class="cert-card__issuer m-0 text-slate-500">SENSAI ACADEMY</p>
                   <h3 class="cert-card__title">SEO 3.0 - wykorzystanie narz&#281;dzi AI w SEO</h3>
-                  <div class="cert-card__footer">
-                    <span class="cert-card__tag">AI + SEO</span>
-                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/sensai.jpg" data-certificate-alt="Certyfikat SEO 3.0 SENSAI ACADEMY" aria-label="Poka&#380; certyfikat SEO 3.0 SENSAI ACADEMY">
+                  <div class="cert-card__footer mt-auto border-t border-slate-900/10 pt-4">
+                    <span class="cert-card__tag text-slate-950">AI + SEO</span>
+                    <button class="cert-card__action bg-[#f3efe7] text-[#8d8579]" type="button" data-certificate-open data-certificate-src="img/kursy/sensai.jpg" data-certificate-alt="Certyfikat SEO 3.0 SENSAI ACADEMY" aria-label="Poka&#380; certyfikat SEO 3.0 SENSAI ACADEMY">
                       <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M8 16L16 8"></path>
                         <path d="M10 8h6v6"></path>
@@ -560,12 +561,12 @@
                     <p class="cert-card__brand">AIDEAS</p>
                   </div>
                 </div>
-                <div class="cert-card__body">
-                  <p class="cert-card__issuer">AIDEAS / POLITECHNIKA WROC&#321;AWSKA</p>
+                <div class="cert-card__body px-5 pt-[22px] pb-5 text-slate-900">
+                  <p class="cert-card__issuer m-0 text-slate-500">AIDEAS / POLITECHNIKA WROC&#321;AWSKA</p>
                   <h3 class="cert-card__title">Program rozwoju kompetencji AI</h3>
-                  <div class="cert-card__footer">
-                    <span class="cert-card__tag">Sztuczna inteligencja</span>
-                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/aiideas.jpg" data-certificate-alt="Program rozwoju kompetencji AI AIDEAS" aria-label="Poka&#380; certyfikat AIDEAS">
+                  <div class="cert-card__footer mt-auto border-t border-slate-900/10 pt-4">
+                    <span class="cert-card__tag text-slate-950">Sztuczna inteligencja</span>
+                    <button class="cert-card__action bg-[#f3efe7] text-[#8d8579]" type="button" data-certificate-open data-certificate-src="img/kursy/aiideas.jpg" data-certificate-alt="Program rozwoju kompetencji AI AIDEAS" aria-label="Poka&#380; certyfikat AIDEAS">
                       <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M8 16L16 8"></path>
                         <path d="M10 8h6v6"></path>
@@ -583,12 +584,12 @@
                     <p class="cert-card__brand cert-card__brand--stacked">Marketing<br>Online</p>
                   </div>
                 </div>
-                <div class="cert-card__body">
-                  <p class="cert-card__issuer">MARKETING ONLINE</p>
+                <div class="cert-card__body px-5 pt-[22px] pb-5 text-slate-900">
+                  <p class="cert-card__issuer m-0 text-slate-500">MARKETING ONLINE</p>
                   <h3 class="cert-card__title">Szkolenie SEO poziom podstawowy / zaawansowany</h3>
-                  <div class="cert-card__footer">
-                    <span class="cert-card__tag">SEO / Pozycjonowanie</span>
-                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/seo-marketingonline.jpg" data-certificate-alt="Szkolenie SEO Marketing Online" aria-label="Poka&#380; certyfikat Marketing Online">
+                  <div class="cert-card__footer mt-auto border-t border-slate-900/10 pt-4">
+                    <span class="cert-card__tag text-slate-950">SEO / Pozycjonowanie</span>
+                    <button class="cert-card__action bg-[#f3efe7] text-[#8d8579]" type="button" data-certificate-open data-certificate-src="img/kursy/seo-marketingonline.jpg" data-certificate-alt="Szkolenie SEO Marketing Online" aria-label="Poka&#380; certyfikat Marketing Online">
                       <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M8 16L16 8"></path>
                         <path d="M10 8h6v6"></path>
@@ -606,12 +607,12 @@
                     <p class="cert-card__brand">GA4<span class="cert-card__brand-sub">PRO</span></p>
                   </div>
                 </div>
-                <div class="cert-card__body">
-                  <p class="cert-card__issuer">SPRAWNY MARKETING</p>
+                <div class="cert-card__body px-5 pt-[22px] pb-5 text-slate-900">
+                  <p class="cert-card__issuer m-0 text-slate-500">SPRAWNY MARKETING</p>
                   <h3 class="cert-card__title">Szkolenie z Google Analytics 4 - poziom zaawansowany</h3>
-                  <div class="cert-card__footer">
-                    <span class="cert-card__tag">Analytics</span>
-                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/ga4pro-sprawnymarketing.jpg" data-certificate-alt="Szkolenie Google Analytics 4 zaawansowane" aria-label="Poka&#380; certyfikat Google Analytics 4">
+                  <div class="cert-card__footer mt-auto border-t border-slate-900/10 pt-4">
+                    <span class="cert-card__tag text-slate-950">Analytics</span>
+                    <button class="cert-card__action bg-[#f3efe7] text-[#8d8579]" type="button" data-certificate-open data-certificate-src="img/kursy/ga4pro-sprawnymarketing.jpg" data-certificate-alt="Szkolenie Google Analytics 4 zaawansowane" aria-label="Poka&#380; certyfikat Google Analytics 4">
                       <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M8 16L16 8"></path>
                         <path d="M10 8h6v6"></path>
@@ -629,12 +630,12 @@
                     <p class="cert-card__brand cert-card__brand--compact">Google<br><span>x SGH</span></p>
                   </div>
                 </div>
-                <div class="cert-card__body">
-                  <p class="cert-card__issuer">GOOGLE / SGH</p>
+                <div class="cert-card__body px-5 pt-[22px] pb-5 text-slate-900">
+                  <p class="cert-card__issuer m-0 text-slate-500">GOOGLE / SGH</p>
                   <h3 class="cert-card__title">Kurs umiej&#281;tno&#347;ci jutra - 8-tygodniowy program</h3>
-                  <div class="cert-card__footer">
-                    <span class="cert-card__tag">Marketing cyfrowy</span>
-                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/googleumiejetnoscijutra.jpg" data-certificate-alt="Kurs umiej&#281;tno&#347;ci jutra Google SGH" aria-label="Poka&#380; certyfikat Google SGH">
+                  <div class="cert-card__footer mt-auto border-t border-slate-900/10 pt-4">
+                    <span class="cert-card__tag text-slate-950">Marketing cyfrowy</span>
+                    <button class="cert-card__action bg-[#f3efe7] text-[#8d8579]" type="button" data-certificate-open data-certificate-src="img/kursy/googleumiejetnoscijutra.jpg" data-certificate-alt="Kurs umiej&#281;tno&#347;ci jutra Google SGH" aria-label="Poka&#380; certyfikat Google SGH">
                       <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M8 16L16 8"></path>
                         <path d="M10 8h6v6"></path>
@@ -652,12 +653,12 @@
                     <p class="cert-card__brand">COI</p>
                   </div>
                 </div>
-                <div class="cert-card__body">
-                  <p class="cert-card__issuer">CENTRALNY O&#346;RODEK INFORMATYKI</p>
+                <div class="cert-card__body px-5 pt-[22px] pb-5 text-slate-900">
+                  <p class="cert-card__issuer m-0 text-slate-500">CENTRALNY O&#346;RODEK INFORMATYKI</p>
                   <h3 class="cert-card__title">Nowy Ty w IT - Prowadzenie projekt&oacute;w w IT</h3>
-                  <div class="cert-card__footer">
-                    <span class="cert-card__tag">Zarz&#261;dzanie IT</span>
-                    <button class="cert-card__action" type="button" data-certificate-open data-certificate-src="img/kursy/coi.png" data-certificate-alt="Szkolenie Nowy Ty w IT COI" aria-label="Poka&#380; certyfikat COI">
+                  <div class="cert-card__footer mt-auto border-t border-slate-900/10 pt-4">
+                    <span class="cert-card__tag text-slate-950">Zarz&#261;dzanie IT</span>
+                    <button class="cert-card__action bg-[#f3efe7] text-[#8d8579]" type="button" data-certificate-open data-certificate-src="img/kursy/coi.png" data-certificate-alt="Szkolenie Nowy Ty w IT COI" aria-label="Poka&#380; certyfikat COI">
                       <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M8 16L16 8"></path>
                         <path d="M10 8h6v6"></path>
@@ -671,114 +672,114 @@
           </div>
         </section>
 
-        <section class="tools-section" id="umiejetnosci" data-nav-theme="light" aria-labelledby="tools-title">
-            <div class="tools-shell">
-                <div class="tools-head">
-                    <h2 id="tools-title">Narzędzia</h2>
-                    <p>Technologie i platformy wykorzystywane na co dzień.</p>
+        <section class="tools-section bg-slate-50 px-11 py-24 text-text-main" id="umiejetnosci" data-nav-theme="light" aria-labelledby="tools-title">
+            <div class="tools-shell mx-auto p-0 bg-transparent">
+                <div class="tools-head mb-[38px]">
+                    <h2 id="tools-title" class="text-slate-950">Narzędzia</h2>
+                    <p class="mt-3 text-[#7a7a7a]">Technologie i platformy wykorzystywane na co dzień.</p>
                 </div>
 
-                <div class="tools-row">
-                    <p class="tools-row-label">Systemy CMS</p>
+                <div class="tools-row border-t border-slate-900/10 py-[34px]">
+                    <p class="tools-row-label m-0 pt-3 text-[#5f5f5f]">Systemy CMS</p>
                     <div class="tools-grid">
-                        <figure class="tools-item"><img src="img/tools/adobe-cms.svg" alt="Adobe CMS" loading="lazy"><figcaption>Adobe CMS</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/wordpress.svg" alt="WordPress" loading="lazy"><figcaption>WordPress</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/sitecore.svg" alt="Sitecore" loading="lazy"><figcaption>Sitecore</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/optimizely.svg" alt="Optimizely" loading="lazy"><figcaption>Optimizely</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/opencms.png" alt="OpenCMS" loading="lazy"><figcaption>OpenCMS</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/vscode.svg" alt="Visual Studio Code" loading="lazy"><figcaption>Visual Studio Code</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/bootstrap.svg" alt="Bootstrap 5" loading="lazy"><figcaption>Bootstrap 5</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/chrome web tools.png" alt="Chrome DevTools" loading="lazy"><figcaption>Chrome DevTools</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/adobe-cms.svg" alt="Adobe CMS" loading="lazy"><figcaption class="text-gray-600">Adobe CMS</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/wordpress.svg" alt="WordPress" loading="lazy"><figcaption class="text-gray-600">WordPress</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/sitecore.svg" alt="Sitecore" loading="lazy"><figcaption class="text-gray-600">Sitecore</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/optimizely.svg" alt="Optimizely" loading="lazy"><figcaption class="text-gray-600">Optimizely</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/opencms.png" alt="OpenCMS" loading="lazy"><figcaption class="text-gray-600">OpenCMS</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/vscode.svg" alt="Visual Studio Code" loading="lazy"><figcaption class="text-gray-600">Visual Studio Code</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/bootstrap.svg" alt="Bootstrap 5" loading="lazy"><figcaption class="text-gray-600">Bootstrap 5</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/chrome web tools.png" alt="Chrome DevTools" loading="lazy"><figcaption class="text-gray-600">Chrome DevTools</figcaption></figure>
                     </div>
                 </div>
 
-                <div class="tools-row">
-                    <p class="tools-row-label">Oprogramowanie graficzne</p>
+                <div class="tools-row border-t border-slate-900/10 py-[34px]">
+                    <p class="tools-row-label m-0 pt-3 text-[#5f5f5f]">Oprogramowanie graficzne</p>
                     <div class="tools-grid">
-                        <figure class="tools-item"><img src="img/tools/figma-logo.png" alt="Figma" loading="lazy"><figcaption>Figma</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/photoshop.svg" alt="Photoshop" loading="lazy"><figcaption>Photoshop</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/figma-logo.png" alt="Figma" loading="lazy"><figcaption class="text-gray-600">Figma</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/photoshop.svg" alt="Photoshop" loading="lazy"><figcaption class="text-gray-600">Photoshop</figcaption></figure>
                     </div>
                 </div>
 
-                <div class="tools-row">
-                    <p class="tools-row-label">Zarządzanie projektami</p>
+                <div class="tools-row border-t border-slate-900/10 py-[34px]">
+                    <p class="tools-row-label m-0 pt-3 text-[#5f5f5f]">Zarządzanie projektami</p>
                     <div class="tools-grid">
-                        <figure class="tools-item"><img src="img/tools/jira.svg" alt="Jira" loading="lazy"><figcaption>Jira</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/activecollab.svg" alt="ActiveCollab" loading="lazy"><figcaption>ActiveCollab</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/github.svg" alt="GitHub" loading="lazy"><figcaption>GitHub</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/jira.svg" alt="Jira" loading="lazy"><figcaption class="text-gray-600">Jira</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/activecollab.svg" alt="ActiveCollab" loading="lazy"><figcaption class="text-gray-600">ActiveCollab</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/github.svg" alt="GitHub" loading="lazy"><figcaption class="text-gray-600">GitHub</figcaption></figure>
                     </div>
                 </div>
 
-                <div class="tools-row">
-                    <p class="tools-row-label">Języki programowania</p>
+                <div class="tools-row border-t border-slate-900/10 py-[34px]">
+                    <p class="tools-row-label m-0 pt-3 text-[#5f5f5f]">Języki programowania</p>
                     <div class="tools-grid">
-                        <figure class="tools-item"><img src="img/tools/html5.svg" alt="HTML5" loading="lazy"><figcaption>HTML5</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/css3.svg" alt="CSS3" loading="lazy"><figcaption>CSS3</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/javascript.svg" alt="JavaScript" loading="lazy"><figcaption>JavaScript</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/php.svg" alt="PHP" loading="lazy"><figcaption>PHP</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/mysql.svg" alt="MySQL" loading="lazy"><figcaption>MySQL</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/html5.svg" alt="HTML5" loading="lazy"><figcaption class="text-gray-600">HTML5</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/css3.svg" alt="CSS3" loading="lazy"><figcaption class="text-gray-600">CSS3</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/javascript.svg" alt="JavaScript" loading="lazy"><figcaption class="text-gray-600">JavaScript</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/php.svg" alt="PHP" loading="lazy"><figcaption class="text-gray-600">PHP</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/mysql.svg" alt="MySQL" loading="lazy"><figcaption class="text-gray-600">MySQL</figcaption></figure>
                     </div>
                 </div>
 
-                <div class="tools-row">
-                    <p class="tools-row-label">Optymalizacja stron</p>
+                <div class="tools-row border-t border-slate-900/10 py-[34px]">
+                    <p class="tools-row-label m-0 pt-3 text-[#5f5f5f]">Optymalizacja stron</p>
                     <div class="tools-grid">
-                        <figure class="tools-item"><img src="img/tools/seo-logo.png" alt="SEO" loading="lazy"><figcaption>SEO</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/ux-logo2.png" alt="UX" loading="lazy"><figcaption>UX</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/seo-logo.png" alt="SEO" loading="lazy"><figcaption class="text-gray-600">SEO</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/ux-logo2.png" alt="UX" loading="lazy"><figcaption class="text-gray-600">UX</figcaption></figure>
                     </div>
                 </div>
 
-                <div class="tools-row">
-                    <p class="tools-row-label">Analiza ruchu</p>
+                <div class="tools-row border-y border-slate-900/10 py-[34px]">
+                    <p class="tools-row-label m-0 pt-3 text-[#5f5f5f]">Analiza ruchu</p>
                     <div class="tools-grid">
-                        <figure class="tools-item"><img src="https://logo.svgcdn.com/logos/google-analytics.png" alt="Google Analytics 4" loading="lazy"><figcaption>Google Analytics 4</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/sitecatalyst.svg" alt="Adobe SiteCatalyst" loading="lazy"><figcaption>Adobe SiteCatalyst</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/hotjar.svg" alt="Hotjar" loading="lazy"><figcaption>Hotjar</figcaption></figure>
-                        <figure class="tools-item"><img src="https://logo.svgcdn.com/logos/google-search-console.png" alt="Google Search Console" loading="lazy"><figcaption>Google Search Console</figcaption></figure>
-                        <figure class="tools-item"><img src="img/tools/google-trends.svg" alt="Google Trends" loading="lazy"><figcaption>Google Trends</figcaption></figure>
-                        <figure class="tools-item"><img src="https://logo.svgcdn.com/logos/google-tag-manager.png" alt="Google Tag Manager" loading="lazy"><figcaption>Google Tag Manager</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="https://logo.svgcdn.com/logos/google-analytics.png" alt="Google Analytics 4" loading="lazy"><figcaption class="text-gray-600">Google Analytics 4</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/sitecatalyst.svg" alt="Adobe SiteCatalyst" loading="lazy"><figcaption class="text-gray-600">Adobe SiteCatalyst</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/hotjar.svg" alt="Hotjar" loading="lazy"><figcaption class="text-gray-600">Hotjar</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="https://logo.svgcdn.com/logos/google-search-console.png" alt="Google Search Console" loading="lazy"><figcaption class="text-gray-600">Google Search Console</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="img/tools/google-trends.svg" alt="Google Trends" loading="lazy"><figcaption class="text-gray-600">Google Trends</figcaption></figure>
+                        <figure class="tools-item bg-transparent px-0 py-1"><img class="transition-all" src="https://logo.svgcdn.com/logos/google-tag-manager.png" alt="Google Tag Manager" loading="lazy"><figcaption class="text-gray-600">Google Tag Manager</figcaption></figure>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="interests-bento" id="hobby" data-nav-theme="light" aria-labelledby="interests-title">
-            <div class="interests-shell">
-                <div class="interests-head">
-                    <h2 id="interests-title">Zainteresowania</h2>
+        <section class="interests-bento relative overflow-hidden bg-slate-50 px-9 py-24 text-text-main" id="hobby" data-nav-theme="light" aria-labelledby="interests-title">
+            <div class="interests-shell relative z-[1] mx-auto p-0 bg-transparent">
+                <div class="interests-head mb-[26px]">
+                    <h2 id="interests-title" class="text-slate-950">Zainteresowania</h2>
                 </div>
                 <div class="interests-grid">
-                    <article class="interest-card interest-card--tall interest-card--bottom" style="--card-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80');">
-                        <div class="interest-card__content">
+                    <article class="interest-card interest-card--tall interest-card--bottom bg-slate-900" style="--card-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="interest-card__content justify-end px-6 pt-8 pb-7 text-white">
                             <h3>Nowe technologie internetowe</h3>
-                            <p>ChatGPT, Midjourney i narzędzia AI do codziennej pracy i testów.</p>
+                            <p class="mt-2.5 text-white/80">ChatGPT, Midjourney i narzędzia AI do codziennej pracy i testów.</p>
                         </div>
                     </article>
 
-                    <article class="interest-card interest-card--ecommerce" style="--card-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80');">
-                        <div class="interest-card__content">
+                    <article class="interest-card interest-card--ecommerce bg-slate-900" style="--card-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="interest-card__content px-6 pt-7 pb-6 text-white">
                             <h3>Rozwój e-commerce i<br>web design</h3>
-                            <p>Projektowanie stron www, UX i optymalizacja ścieżek zakupowych.</p>
+                            <p class="mt-2.5 text-white/80">Projektowanie stron www, UX i optymalizacja ścieżek zakupowych.</p>
                         </div>
                     </article>
 
-                    <article class="interest-card" style="--card-image: url('img/hobby/maraton.jpg');">
-                        <div class="interest-card__content">
+                    <article class="interest-card bg-slate-900" style="--card-image: url('img/hobby/maraton.jpg');">
+                        <div class="interest-card__content px-6 pt-7 pb-6 text-white">
                             <h3>Sport</h3>
-                            <p>Surfing, windsurfing, crossfit, bieganie i pierwszy maraton w 2023 roku.</p>
+                            <p class="mt-2.5 text-white/80">Surfing, windsurfing, crossfit, bieganie i pierwszy maraton w 2023 roku.</p>
                         </div>
                     </article>
 
-                    <article class="interest-card" style="--card-image: url('img/hobby/ksiazki.jpg');">
-                        <div class="interest-card__content">
+                    <article class="interest-card bg-slate-900" style="--card-image: url('img/hobby/ksiazki.jpg');">
+                        <div class="interest-card__content px-6 pt-7 pb-6 text-white">
                             <h3>Książki</h3>
-                            <p>Technologie internetowe, jednostki specjalne i sportowe biografie.</p>
+                            <p class="mt-2.5 text-white/80">Technologie internetowe, jednostki specjalne i sportowe biografie.</p>
                         </div>
                     </article>
 
-                    <article class="interest-card" style="--card-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1200&q=80');">
-                        <div class="interest-card__content">
+                    <article class="interest-card bg-slate-900" style="--card-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="interest-card__content px-6 pt-7 pb-6 text-white">
                             <h3>Hobbystyczne tworzenie stron</h3>
-                            <p>Prywatne projekty, eksperymenty z layoutami i nowe koncepty UI.</p>
+                            <p class="mt-2.5 text-white/80">Prywatne projekty, eksperymenty z layoutami i nowe koncepty UI.</p>
                         </div>
                     </article>
                 </div>
@@ -787,6 +788,4 @@
         <script src="script.js"></script>
     </body>
 </html>
-
-
 
