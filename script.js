@@ -19,6 +19,8 @@ const certificateModalClose = document.querySelector('[data-certificate-close]')
 const previewVideos = document.querySelectorAll('video.project-video-thumb');
 const projectYtVideo = document.querySelector('.project-yt-video');
 const projectsSection = document.querySelector('.projects-section');
+const certSectionIntro = document.querySelector('.cert-section__intro');
+const certCards = document.querySelectorAll('.cert-card');
 const accordionTriggers = document.querySelectorAll('.exp-accordion-trigger');
 const sourceExpFeatures = document.querySelectorAll('.bento-section .exp-features > .exp-feature');
 const accordionItems = document.querySelectorAll('.exp-accordion-item');
@@ -170,7 +172,8 @@ if (heroStatValues.length) {
     const heroRevealDelay = 1000;
 
     const animateCounter = (el, duration = 1600) => {
-        const target = Number(el.textContent.replace(/[^\d]/g, ''));
+        const numberEl = el.querySelector('.hero-stat-number');
+        const target = Number(numberEl?.textContent?.replace(/[^\d]/g, '') || 0);
         if (!Number.isFinite(target) || target <= 0) {
             return;
         }
@@ -181,7 +184,7 @@ if (heroStatValues.length) {
             const progress = Math.min((now - startTime) / duration, 1);
             const eased = progress * progress * progress * (progress * (6 * progress - 15) + 10);
             const value = Math.round(target * eased);
-            el.textContent = `+${value}`;
+            numberEl.textContent = `${value}`;
 
             if (progress < 1) {
                 requestAnimationFrame(tick);
@@ -200,8 +203,11 @@ if (heroStatValues.length) {
             el.dataset.counted = 'true';
 
             if (prefersReducedMotion) {
-                const target = Number(el.textContent.replace(/[^\d]/g, ''));
-                el.textContent = `+${target}`;
+                const numberEl = el.querySelector('.hero-stat-number');
+                const target = Number(numberEl?.textContent?.replace(/[^\d]/g, '') || 0);
+                if (numberEl && Number.isFinite(target)) {
+                    numberEl.textContent = `${target}`;
+                }
                 return;
             }
 
@@ -277,6 +283,36 @@ if (projectsSection) {
         projectsObserver.observe(projectsSection);
     } else {
         projectsSection.classList.add('is-visible');
+    }
+}
+
+if (certSectionIntro || certCards.length) {
+    const certRevealTargets = [
+        ...(certSectionIntro ? [certSectionIntro] : []),
+        ...certCards
+    ];
+
+    if ('IntersectionObserver' in window) {
+        const certObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        certRevealTargets.forEach((item) => {
+            certObserver.observe(item);
+        });
+    } else {
+        certRevealTargets.forEach((item) => {
+            item.classList.add('visible');
+        });
     }
 }
 
