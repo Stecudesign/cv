@@ -21,6 +21,11 @@ const projectYtVideo = document.querySelector('.project-yt-video');
 const projectsSection = document.querySelector('.projects-section');
 const certSectionIntro = document.querySelector('.cert-section__intro');
 const certCards = document.querySelectorAll('.cert-card');
+const toolsSection = document.querySelector('.tools-section');
+const toolsHead = document.querySelector('.tools-head');
+const toolRows = [...document.querySelectorAll('.tools-row')];
+const toolPills = [...document.querySelectorAll('.tools-pill')];
+const interestCards = document.querySelectorAll('.interest-card');
 const accordionTriggers = document.querySelectorAll('.exp-accordion-trigger');
 const sourceExpFeatures = document.querySelectorAll('.bento-section .exp-features > .exp-feature');
 const accordionItems = document.querySelectorAll('.exp-accordion-item');
@@ -30,6 +35,15 @@ expMetaItems.forEach((item, index) => {
 
 expFeatures.forEach((item, index) => {
     item.style.setProperty('--exp-reveal-delay', `${220 + index * 260}ms`);
+});
+
+toolRows.forEach((row, rowIndex) => {
+    const rowDelay = rowIndex * 100;
+    row.style.setProperty('--tools-row-delay', `${rowDelay}ms`);
+
+    [...row.querySelectorAll('.tools-pill')].forEach((pill, pillIndex) => {
+        pill.style.setProperty('--tools-pill-delay', `${rowDelay + pillIndex * 60}ms`);
+    });
 });
 
 const buildInlineExperienceHeaders = () => {
@@ -312,6 +326,61 @@ if (certSectionIntro || certCards.length) {
     } else {
         certRevealTargets.forEach((item) => {
             item.classList.add('visible');
+        });
+    }
+}
+
+if (toolsSection && (toolsHead || toolRows.length || toolPills.length)) {
+    const revealTools = () => {
+        toolsSection.classList.remove('tools-section--pending');
+        toolsHead?.classList.add('visible');
+        toolRows.forEach((row) => row.classList.add('visible'));
+        toolPills.forEach((pill) => pill.classList.add('visible'));
+    };
+
+    if ('IntersectionObserver' in window) {
+        toolsSection.classList.add('tools-section--pending');
+
+        const toolsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                revealTools();
+                observer.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        toolsObserver.observe(toolsSection);
+    } else {
+        revealTools();
+    }
+}
+
+if (interestCards.length) {
+    if ('IntersectionObserver' in window) {
+        const interestsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        interestCards.forEach((card) => {
+            interestsObserver.observe(card);
+        });
+    } else {
+        interestCards.forEach((card) => {
+            card.classList.add('visible');
         });
     }
 }
