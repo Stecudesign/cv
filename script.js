@@ -23,11 +23,11 @@ const accordionTriggers = document.querySelectorAll('.exp-accordion-trigger');
 const sourceExpFeatures = document.querySelectorAll('.bento-section .exp-features > .exp-feature');
 const accordionItems = document.querySelectorAll('.exp-accordion-item');
 expMetaItems.forEach((item, index) => {
-    item.style.setProperty('--exp-meta-reveal-delay', `${index * 240}ms`);
+    item.style.setProperty('--exp-meta-reveal-delay', `${index * 260}ms`);
 });
 
 expFeatures.forEach((item, index) => {
-    item.style.setProperty('--exp-reveal-delay', `${220 + index * 240}ms`);
+    item.style.setProperty('--exp-reveal-delay', `${220 + index * 260}ms`);
 });
 
 const buildInlineExperienceHeaders = () => {
@@ -151,8 +151,8 @@ if (revealItems.length) {
                 }
             });
         }, {
-            threshold: 0.2,
-            rootMargin: '0px 0px -10% 0px'
+            threshold: 0.08,
+            rootMargin: '0px 0px -6% 0px'
         });
 
         revealItems.forEach((item) => {
