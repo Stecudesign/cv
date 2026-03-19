@@ -93,6 +93,256 @@ const buildInlineExperienceHeaders = () => {
 
 buildInlineExperienceHeaders();
 
+const experienceSection = document.getElementById('doswiadczenie');
+const mobileExperienceMedia = window.matchMedia('(max-width: 768px)');
+let destroyMobileExperienceEnhancement = null;
+
+const setupMobileExperienceEnhancement = () => {
+    if (!experienceSection || !mobileExperienceMedia.matches) {
+        return () => {};
+    }
+
+    const entries = [...experienceSection.querySelectorAll('.exp-feature-meta')]
+        .map((meta, index) => {
+            const feature = meta.nextElementSibling;
+            if (!feature || !feature.classList.contains('exp-feature')) {
+                return null;
+            }
+
+            return { meta, feature, index };
+        })
+        .filter(Boolean);
+
+    if (!entries.length) {
+        return () => {};
+    }
+
+    const revealObserver = 'IntersectionObserver' in window
+        ? new IntersectionObserver((items, observer) => {
+            items.forEach((item) => {
+                if (!item.isIntersecting) {
+                    return;
+                }
+
+                const index = Number(item.target.dataset.expMobileIndex);
+                const entry = entries[index];
+                if (!entry) {
+                    return;
+                }
+
+                entry.meta.classList.add('is-mobile-visible');
+                entry.feature.classList.add('is-mobile-visible');
+                observer.unobserve(item.target);
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -8% 0px'
+        })
+        : null;
+
+    let activeEntry = null;
+
+    const setPanelState = (entry, shouldOpen) => {
+        const { meta, feature, button, panel } = entry;
+        if (!button || !panel) {
+            return;
+        }
+
+        button.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+        meta.classList.toggle('is-mobile-open', shouldOpen);
+        feature.classList.toggle('is-mobile-open', shouldOpen);
+
+        if (shouldOpen) {
+            panel.hidden = false;
+            panel.style.maxHeight = '0px';
+            panel.style.opacity = '0';
+
+            requestAnimationFrame(() => {
+                panel.style.maxHeight = `${panel.scrollHeight}px`;
+                panel.style.opacity = '1';
+            });
+
+            const handleOpenEnd = (event) => {
+                if (event.propertyName !== 'max-height') {
+                    return;
+                }
+
+                if (button.getAttribute('aria-expanded') === 'true') {
+                    panel.style.maxHeight = `${panel.scrollHeight}px`;
+                }
+                panel.removeEventListener('transitionend', handleOpenEnd);
+            };
+
+            panel.addEventListener('transitionend', handleOpenEnd);
+            activeEntry = entry;
+            return;
+        }
+
+        panel.style.maxHeight = `${panel.scrollHeight}px`;
+        panel.style.opacity = '1';
+
+        requestAnimationFrame(() => {
+            panel.style.maxHeight = '0px';
+            panel.style.opacity = '0';
+        });
+
+        const handleCloseEnd = (event) => {
+            if (event.propertyName !== 'max-height') {
+                return;
+            }
+
+            if (button.getAttribute('aria-expanded') === 'false') {
+                panel.hidden = true;
+            }
+            panel.removeEventListener('transitionend', handleCloseEnd);
+        };
+
+        panel.addEventListener('transitionend', handleCloseEnd);
+
+        if (activeEntry === entry) {
+            activeEntry = null;
+        }
+    };
+
+    entries.forEach((entry) => {
+        const { meta, feature, index } = entry;
+        const content = feature.querySelector('.exp-feature-content');
+        const role = feature.querySelector('.exp-feature-role');
+        const panel = feature.querySelector('.job-content-wrapper');
+        const date = meta.querySelector('.exp-feature-date');
+        const companyName = meta.querySelector('.exp-feature-company')?.textContent?.trim() || '';
+
+        meta.classList.add('exp-mobile-meta', 'is-visible');
+        feature.classList.add('exp-mobile-feature', 'is-visible');
+        meta.dataset.expMobileIndex = `${index}`;
+        feature.dataset.expMobileIndex = `${index}`;
+        meta.style.setProperty('--exp-mobile-delay', `${index * 80}ms`);
+        feature.style.setProperty('--exp-mobile-delay', `${index * 80}ms`);
+
+        if (date && /teva/i.test(companyName) && !date.querySelector('.exp-feature-active-badge')) {
+            const badge = document.createElement('span');
+            badge.className = 'exp-feature-active-badge';
+            badge.textContent = 'aktywny';
+            badge.dataset.mobileInjected = 'true';
+            date.append(badge);
+            entry.badge = badge;
+        }
+
+        if (!content || !role || !panel) {
+            if (revealObserver) {
+                revealObserver.observe(feature);
+            } else {
+                meta.classList.add('is-mobile-visible');
+                feature.classList.add('is-mobile-visible');
+            }
+            return;
+        }
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'exp-mobile-toggle';
+        button.setAttribute('aria-expanded', 'false');
+
+        if (!panel.id) {
+            panel.id = `exp-mobile-panel-${index}`;
+            panel.dataset.mobileGeneratedId = 'true';
+        }
+
+        button.setAttribute('aria-controls', panel.id);
+
+        const copy = document.createElement('span');
+        copy.className = 'exp-mobile-toggle-copy';
+
+        const roleText = document.createElement('span');
+        roleText.className = 'exp-mobile-toggle-role';
+        roleText.textContent = role.textContent.trim();
+
+        const companyText = document.createElement('span');
+        companyText.className = 'exp-mobile-toggle-company';
+        companyText.textContent = companyName;
+
+        const icon = document.createElement('span');
+        icon.className = 'exp-mobile-toggle-icon';
+        icon.setAttribute('aria-hidden', 'true');
+
+        copy.append(roleText, companyText);
+        button.append(copy, icon);
+        content.insertBefore(button, role);
+
+        panel.classList.add('exp-mobile-panel');
+        panel.hidden = true;
+        panel.style.maxHeight = '0px';
+        panel.style.opacity = '0';
+
+        const handleToggle = () => {
+            const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+            if (activeEntry && activeEntry !== entry) {
+                setPanelState(activeEntry, false);
+            }
+
+            setPanelState(entry, !isOpen);
+        };
+
+        button.addEventListener('click', handleToggle);
+
+        entry.button = button;
+        entry.panel = panel;
+        entry.handleToggle = handleToggle;
+
+        if (revealObserver) {
+            revealObserver.observe(feature);
+        } else {
+            meta.classList.add('is-mobile-visible');
+            feature.classList.add('is-mobile-visible');
+        }
+    });
+
+    return () => {
+        revealObserver?.disconnect();
+
+        entries.forEach((entry) => {
+            entry.button?.removeEventListener('click', entry.handleToggle);
+            entry.button?.remove();
+            entry.badge?.dataset.mobileInjected === 'true' && entry.badge.remove();
+
+            entry.meta.classList.remove('exp-mobile-meta', 'is-mobile-visible', 'is-mobile-open');
+            entry.feature.classList.remove('exp-mobile-feature', 'is-mobile-visible', 'is-mobile-open');
+            entry.meta.style.removeProperty('--exp-mobile-delay');
+            entry.feature.style.removeProperty('--exp-mobile-delay');
+            delete entry.meta.dataset.expMobileIndex;
+            delete entry.feature.dataset.expMobileIndex;
+
+            if (entry.panel) {
+                entry.panel.classList.remove('exp-mobile-panel');
+                entry.panel.hidden = false;
+                entry.panel.style.removeProperty('max-height');
+                entry.panel.style.removeProperty('opacity');
+
+                if (entry.panel.dataset.mobileGeneratedId === 'true') {
+                    entry.panel.removeAttribute('id');
+                    delete entry.panel.dataset.mobileGeneratedId;
+                }
+            }
+        });
+    };
+};
+
+const syncMobileExperienceEnhancement = () => {
+    destroyMobileExperienceEnhancement?.();
+    destroyMobileExperienceEnhancement = mobileExperienceMedia.matches
+        ? setupMobileExperienceEnhancement()
+        : null;
+};
+
+syncMobileExperienceEnhancement();
+
+if (typeof mobileExperienceMedia.addEventListener === 'function') {
+    mobileExperienceMedia.addEventListener('change', syncMobileExperienceEnhancement);
+} else if (typeof mobileExperienceMedia.addListener === 'function') {
+    mobileExperienceMedia.addListener(syncMobileExperienceEnhancement);
+}
+
 if (burgerMenu && mainNav) {
     burgerMenu.addEventListener('click', () => {
         mainNav.classList.toggle('is-open');

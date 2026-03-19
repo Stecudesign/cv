@@ -668,6 +668,11 @@ body.reveal-ready .exp-feature.is-visible::after {
     display: none !important;
 }
 
+.exp-mobile-toggle,
+.exp-feature-active-badge {
+    display: none;
+}
+
 .exp-feature-inline-header-accent {
     width: 54px;
     height: 2px;
@@ -2216,6 +2221,252 @@ body.reveal-ready .interests-shell {
 
     .tools-row-divider {
         height: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    #doswiadczenie .exp-features {
+        position: relative;
+        gap: 16px;
+        padding-left: 28px;
+    }
+
+    #doswiadczenie .exp-features::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        bottom: 8px;
+        left: 10px;
+        width: 1px;
+        background: rgba(15, 23, 42, 0.12);
+    }
+
+    body.reveal-ready #doswiadczenie .exp-feature-meta.exp-mobile-meta,
+    body.reveal-ready #doswiadczenie .exp-feature.exp-mobile-feature {
+        opacity: 0;
+        transform: translateX(-16px);
+        transition:
+            opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
+        transition-delay: var(--exp-mobile-delay, 0ms);
+    }
+
+    body.reveal-ready #doswiadczenie .exp-feature-meta.exp-mobile-meta.is-mobile-visible,
+    body.reveal-ready #doswiadczenie .exp-feature.exp-mobile-feature.is-mobile-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #doswiadczenie .exp-feature-meta.exp-mobile-meta {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding-left: 26px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    #doswiadczenie .exp-feature-meta.exp-mobile-meta::before {
+        content: '';
+        position: absolute;
+        top: 0.3rem;
+        left: -24px;
+        width: 11px;
+        height: 11px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.18);
+        transform: scale(1);
+        transition:
+            transform 0.3s ease,
+            background-color 0.3s ease;
+    }
+
+    #doswiadczenie .exp-feature-meta.exp-mobile-meta.is-mobile-open::before {
+        background: var(--text-main);
+        transform: scale(1.3);
+    }
+
+    #doswiadczenie .exp-feature-meta.exp-mobile-meta .exp-feature-sep {
+        display: none;
+    }
+
+    #doswiadczenie .exp-feature-meta.exp-mobile-meta .exp-feature-company {
+        display: none;
+    }
+
+    #doswiadczenie .exp-feature-date {
+        flex-wrap: wrap;
+    }
+
+    #doswiadczenie .exp-feature-active-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(22, 163, 74, 0.12);
+        color: #15803d;
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    #doswiadczenie .exp-feature.exp-mobile-feature {
+        margin-left: 26px;
+        gap: 16px;
+        padding: 18px;
+        border-radius: 18px;
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    #doswiadczenie .exp-feature.exp-mobile-feature:hover {
+        transform: none;
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    #doswiadczenie .exp-feature.exp-mobile-feature::after {
+        display: none;
+    }
+
+    #doswiadczenie .exp-feature.exp-mobile-feature.is-mobile-open {
+        border-color: rgba(15, 23, 42, 0.1);
+        box-shadow: 0 18px 34px rgba(15, 23, 42, 0.08);
+    }
+
+    #doswiadczenie .exp-feature.exp-mobile-feature .exp-feature-media {
+        width: 72px;
+    }
+
+    #doswiadczenie .exp-feature.exp-mobile-feature .exp-feature-content {
+        gap: 12px;
+    }
+
+    #doswiadczenie .exp-feature.exp-mobile-feature .exp-feature-role {
+        display: none;
+    }
+
+    #doswiadczenie .exp-mobile-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    #doswiadczenie .exp-mobile-toggle-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        min-width: 0;
+    }
+
+    #doswiadczenie .exp-mobile-toggle-role {
+        font-size: 1.02rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--text-main);
+    }
+
+    #doswiadczenie .exp-mobile-toggle-company {
+        font-size: 0.72rem;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+    }
+
+    #doswiadczenie .exp-mobile-toggle-icon {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+        border-radius: 999px;
+        border: 1px solid rgba(15, 23, 42, 0.1);
+        background: rgba(15, 23, 42, 0.03);
+        transition:
+            transform 0.3s ease,
+            background-color 0.3s ease,
+            border-color 0.3s ease;
+    }
+
+    #doswiadczenie .exp-mobile-toggle-icon::before,
+    #doswiadczenie .exp-mobile-toggle-icon::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--text-main);
+        transform: translate(-50%, -50%);
+    }
+
+    #doswiadczenie .exp-mobile-toggle-icon::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    #doswiadczenie .exp-feature.exp-mobile-feature.is-mobile-open .exp-mobile-toggle-icon {
+        transform: rotate(45deg);
+        border-color: rgba(15, 23, 42, 0.14);
+        background: rgba(15, 23, 42, 0.06);
+    }
+
+    #doswiadczenie .exp-mobile-panel {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition:
+            max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.35s ease;
+    }
+
+    #doswiadczenie .exp-feature.exp-mobile-feature.is-mobile-open .exp-mobile-panel {
+        opacity: 1;
+    }
+
+    #doswiadczenie .exp-mobile-panel .job-content-wrapper {
+        gap: 20px;
+        padding-top: 4px;
+    }
+
+    #doswiadczenie .exp-mobile-panel .job-tech-stack {
+        min-width: 0;
+        padding-left: 0;
+        padding-top: 14px;
+        border-left: 0;
+        border-top: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    #doswiadczenie .exp-mobile-panel .tech-stack-title {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--text-muted);
+    }
+
+    #doswiadczenie .exp-mobile-panel .tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    #doswiadczenie .exp-mobile-panel .tech-tag {
+        min-height: 30px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.05);
+        border-color: rgba(15, 23, 42, 0.08);
+        color: var(--text-main);
     }
 }
 
