@@ -1,5 +1,6 @@
 const burgerMenu = document.querySelector('.burger-menu');
 const mainNav = document.querySelector('.main-nav');
+const menuCloseButton = document.querySelector('.menu-close');
 const body = document.body;
 const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
 const navSections = [...document.querySelectorAll('[data-nav-theme][id]')];
@@ -350,6 +351,13 @@ if (burgerMenu && mainNav) {
     });
 }
 
+if (menuCloseButton && burgerMenu && mainNav) {
+    menuCloseButton.addEventListener('click', () => {
+        mainNav.classList.remove('is-open');
+        burgerMenu.classList.remove('is-open');
+    });
+}
+
 if (navLinks.length) {
     const setActiveLink = (hash) => {
         const hasMatchingLink = [...navLinks].some((link) => link.getAttribute('href') === hash);
@@ -359,7 +367,7 @@ if (navLinks.length) {
 
         navLinks.forEach((link) => {
             const isActive = link.getAttribute('href') === hash;
-            link.classList.toggle('is-active', isActive);
+            link.classList.toggle('active', isActive);
             if (isActive) {
                 link.setAttribute('aria-current', 'page');
             } else {

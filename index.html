@@ -46,14 +46,60 @@
                 <span class="burger-label">menu</span>
             </button>
 
-            <nav class="main-nav bg-black/95">
-                <ul>
-                    <li><a class="block py-2.5 text-white" href="#o-mnie">O MNIE</a></li>
-                    <li><a class="block py-2.5 text-white" href="#doswiadczenie">DOŚWIADCZENIE</a></li>
-                    <li><a class="block py-2.5 text-white" href="#projekty">PROJEKTY</a></li>
-                    <li><a class="block py-2.5 text-white" href="#umiejetnosci">UMIEJĘTNOŚCI</a></li>
-                    <li><a class="block py-2.5 text-white" href="#hobby">HOBBY</a></li>
-                </ul>
+            <nav class="main-nav fixed inset-0 z-[110] opacity-0 invisible pointer-events-none transition-opacity duration-300 [&.is-open]:opacity-100 [&.is-open]:visible [&.is-open]:pointer-events-auto" aria-label="Menu główne">
+                <div class="hidden md:block fixed inset-0 bg-black/50 -z-10"></div>
+                <div class="flex min-h-screen w-full -translate-x-full flex-col bg-black/95 px-6 pb-8 pt-6 backdrop-blur-xl transition-transform duration-[450ms] ease-[cubic-bezier(0.77,0,0.175,1)] md:mr-auto md:max-w-[420px] md:px-8 [.main-nav.is-open_&]:translate-x-0">
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-[13px] font-medium text-white">PS</span>
+                        <button class="menu-close w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white transition-colors duration-200 hover:border-white/40 hover:text-[#FF5500]" aria-label="Zamknij menu" type="button">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false">
+                                <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="flex flex-1 flex-col">
+                        <li class="opacity-0 translate-y-[18px] transition-all duration-300 ease-out [transition-delay:180ms] [.main-nav.is-open_&]:opacity-100 [.main-nav.is-open_&]:translate-y-0">
+                            <a class="active flex min-h-[52px] items-center gap-4 border-b border-t border-white/10 py-4 group" href="#o-mnie">
+                                <span class="w-5 text-[10px] tabular-nums text-white/30">01</span>
+                                <span class="flex-1 truncate text-base md:text-lg font-medium text-white [.active_&]:text-[#FF5500]">O mnie</span>
+                                <span class="text-sm text-white/25 transition-colors duration-200 [.active_&]:text-[#FF5500] group-hover:text-white/70">→</span>
+                            </a>
+                        </li>
+                        <li class="opacity-0 translate-y-[18px] transition-all duration-300 ease-out [transition-delay:240ms] [.main-nav.is-open_&]:opacity-100 [.main-nav.is-open_&]:translate-y-0">
+                            <a class="flex min-h-[52px] items-center gap-4 border-b border-white/10 py-4 group" href="#doswiadczenie">
+                                <span class="w-5 text-[10px] tabular-nums text-white/30">02</span>
+                                <span class="flex-1 truncate text-base md:text-lg font-medium text-white [.active_&]:text-[#FF5500]">Doświadczenie</span>
+                                <span class="text-sm text-white/25 transition-colors duration-200 [.active_&]:text-[#FF5500] group-hover:text-white/70">→</span>
+                            </a>
+                        </li>
+                        <li class="opacity-0 translate-y-[18px] transition-all duration-300 ease-out [transition-delay:300ms] [.main-nav.is-open_&]:opacity-100 [.main-nav.is-open_&]:translate-y-0">
+                            <a class="flex min-h-[52px] items-center gap-4 border-b border-white/10 py-4 group" href="#projekty">
+                                <span class="w-5 text-[10px] tabular-nums text-white/30">03</span>
+                                <span class="flex-1 truncate text-base md:text-lg font-medium text-white [.active_&]:text-[#FF5500]">Projekty</span>
+                                <span class="text-sm text-white/25 transition-colors duration-200 [.active_&]:text-[#FF5500] group-hover:text-white/70">→</span>
+                            </a>
+                        </li>
+                        <li class="opacity-0 translate-y-[18px] transition-all duration-300 ease-out [transition-delay:360ms] [.main-nav.is-open_&]:opacity-100 [.main-nav.is-open_&]:translate-y-0">
+                            <a class="flex min-h-[52px] items-center gap-4 border-b border-white/10 py-4 group" href="#umiejetnosci">
+                                <span class="w-5 text-[10px] tabular-nums text-white/30">04</span>
+                                <span class="flex-1 truncate text-base md:text-lg font-medium text-white [.active_&]:text-[#FF5500]">Umiejętności</span>
+                                <span class="text-sm text-white/25 transition-colors duration-200 [.active_&]:text-[#FF5500] group-hover:text-white/70">→</span>
+                            </a>
+                        </li>
+                        <li class="opacity-0 translate-y-[18px] transition-all duration-300 ease-out [transition-delay:420ms] [.main-nav.is-open_&]:opacity-100 [.main-nav.is-open_&]:translate-y-0">
+                            <a class="flex min-h-[52px] items-center gap-4 border-b border-white/10 py-4 group" href="#hobby">
+                                <span class="w-5 text-[10px] tabular-nums text-white/30">05</span>
+                                <span class="flex-1 truncate text-base md:text-lg font-medium text-white [.active_&]:text-[#FF5500]">Hobby</span>
+                                <span class="text-sm text-white/25 transition-colors duration-200 [.active_&]:text-[#FF5500] group-hover:text-white/70">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="mt-auto flex gap-4 pt-6">
+                        <a class="text-[11px] tracking-wide text-white/30 transition-colors duration-200 hover:text-white/60" href="#">LinkedIn</a>
+                        <a class="text-[11px] tracking-wide text-white/30 transition-colors duration-200 hover:text-white/60" href="https://github.com/Stecudesign/cv">GitHub</a>
+                        <a class="text-[11px] tracking-wide text-white/30 transition-colors duration-200 hover:text-white/60" href="#">Email</a>
+                    </div>
+                </div>
             </nav>
 
             <main class="main-grid">
