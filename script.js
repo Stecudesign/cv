@@ -30,11 +30,11 @@ const accordionTriggers = document.querySelectorAll('.exp-accordion-trigger');
 const sourceExpFeatures = document.querySelectorAll('.bento-section .exp-features > .exp-feature');
 const accordionItems = document.querySelectorAll('.exp-accordion-item');
 expMetaItems.forEach((item, index) => {
-    item.style.setProperty('--exp-meta-reveal-delay', `${index * 260}ms`);
+    item.style.setProperty('--exp-meta-reveal-delay', `${index * 145}ms`);
 });
 
 expFeatures.forEach((item, index) => {
-    item.style.setProperty('--exp-reveal-delay', `${220 + index * 260}ms`);
+    item.style.setProperty('--exp-reveal-delay', `${110 + index * 145}ms`);
 });
 
 toolRows.forEach((row, rowIndex) => {
