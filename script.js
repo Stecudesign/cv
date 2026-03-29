@@ -6,7 +6,8 @@ const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
 const navSections = [...document.querySelectorAll('[data-nav-theme][id]')];
 const expMetaItems = document.querySelectorAll('.exp-feature-meta');
 const expFeatures = document.querySelectorAll('.exp-feature');
-const revealItems = [...expMetaItems, ...expFeatures];
+const aboutRevealItems = [...document.querySelectorAll('.about-highlight__copy, .about-highlight__card')];
+const revealItems = [...expMetaItems, ...expFeatures, ...aboutRevealItems];
 const heroStatValues = document.querySelectorAll('.hero-stat-value');
 const projectVideoTriggers = document.querySelectorAll('[data-video-open]');
 const projectVideoModal = document.getElementById('project-video-modal');
@@ -36,6 +37,10 @@ expMetaItems.forEach((item, index) => {
 
 expFeatures.forEach((item, index) => {
     item.style.setProperty('--exp-reveal-delay', `${110 + index * 145}ms`);
+});
+
+aboutRevealItems.forEach((item, index) => {
+    item.style.setProperty('--about-reveal-delay', `${120 + index * 140}ms`);
 });
 
 toolRows.forEach((row, rowIndex) => {
