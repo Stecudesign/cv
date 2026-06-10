@@ -2,8 +2,9 @@
     --primary: #ff4d00;
     --primary-dark: #d94100;
     --secondary: #020617;
-    --text-main: #2d2d2d;
-    --text-muted: #6b7280;
+    --text-heading: #0f172a;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
     --bg-light: #f3f4f6;
     --white: #ffffff;
     --font-main: 'Poppins', sans-serif;
@@ -320,7 +321,7 @@ button {
     line-height: 0.94;
     letter-spacing: -0.05em;
     font-weight: 800;
-    color: #0f172a;
+    color: var(--text-heading);
 }
 
 .about-highlight__text {
@@ -473,12 +474,12 @@ body.is-light-bg .burger-menu {
 }
 
 .bento-eyebrow {
-
     display: inline-flex;
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
+    color: var(--text-muted);
 }
 
 #bento-title,
@@ -489,7 +490,7 @@ body.is-light-bg .burger-menu {
     line-height: 0.94;
     letter-spacing: -0.045em;
     font-weight: 800;
-    color: #020617;
+    color: var(--text-heading);
 }
 
 .exp-features {
@@ -546,7 +547,7 @@ body.is-light-bg .burger-menu {
     align-items: center;
     gap: 10px;
     margin: 2px 0 4px;
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 0.11em;
@@ -581,7 +582,7 @@ body.is-light-bg .burger-menu {
 }
 
 .exp-feature-company {
-    color: #0f172a;
+    color: var(--text-heading);
     font-weight: 700;
 }
 
@@ -646,7 +647,7 @@ body.reveal-ready .exp-feature.is-visible::after {
     line-height: 1.18;
     font-weight: 700;
     letter-spacing: -0.03em;
-    color: #262626;
+    color: var(--text-heading);
 }
 
 .job-content-wrapper {
@@ -667,7 +668,7 @@ body.reveal-ready .exp-feature.is-visible::after {
     max-width: 100%;
     font-size: 0.82rem;
     line-height: 1.55;
-    color: #404040;
+    color: var(--text-main);
 }
 
 .exp-feature-list li {
@@ -719,7 +720,7 @@ body.reveal-ready .exp-feature.is-visible::after {
     border: 1px solid #e7e7e7;
     border-radius: 7px;
     background: #f7f7f8;
-    color: #334155;
+    color: var(--text-main);
     font-size: 0.68rem;
     font-weight: 600;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -764,14 +765,14 @@ body.reveal-ready .exp-feature.is-visible::after {
     line-height: 1;
     letter-spacing: 0.11em;
     text-transform: uppercase;
-    color: #6b7280;
+    color: var(--text-muted);
 }
 
 .exp-feature-inline-header-date {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #6b7280;
+    color: var(--text-muted);
     font-weight: 650;
     white-space: nowrap;
 }
@@ -790,7 +791,7 @@ body.reveal-ready .exp-feature.is-visible::after {
 }
 
 .exp-feature-inline-header-company {
-    color: #0f172a;
+    color: var(--text-heading);
     font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
@@ -801,12 +802,12 @@ body.reveal-ready .exp-feature.is-visible::after {
 }
 
 .projects-eyebrow {
-
     display: inline-flex;
     font-size: 0.86rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
+    color: var(--text-muted);
 }
 
 .projects-grid {
@@ -1422,7 +1423,7 @@ body.reveal-ready .exp-feature.is-visible::after {
 }
 
 .cert-card__brand--compact span {
-    color: #334155;
+    color: var(--text-main);
 }
 
 .cert-card__brand-sub {
@@ -1452,7 +1453,7 @@ body.reveal-ready .exp-feature.is-visible::after {
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #6b7280;
+    color: var(--text-muted);
 }
 
 .cert-card__title {
@@ -1462,7 +1463,7 @@ body.reveal-ready .exp-feature.is-visible::after {
     font-weight: 700;
     line-height: 1.28;
     letter-spacing: -0.02em;
-    color: #0f172a;
+    color: var(--text-heading);
 }
 
 .cert-card__footer {
@@ -1647,6 +1648,7 @@ body.reveal-ready .exp-feature.is-visible::after {
 .tools-head p {
     max-width: 620px;
     font-size: 1rem;
+    color: var(--text-muted);
 }
 
 .tools-list {
@@ -1792,7 +1794,7 @@ body.reveal-ready .exp-feature.is-visible::after {
     font-size: 13px;
     line-height: 1.1;
     font-weight: 500;
-    color: #0f172a;
+    color: var(--text-heading);
     white-space: nowrap;
 }
 

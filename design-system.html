@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System — Paweł Steckiewicz CV</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ── Design System Shell ────────────────────────────────── */
+        .ds-body {
+            background: #f8f9fb;
+            color: var(--text-heading);
+            font-family: var(--font-main);
+            padding: 0 0 96px;
+        }
+
+        .ds-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 14px 40px;
+            background: rgba(2, 6, 23, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .ds-topbar-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .ds-topbar-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--primary);
+        }
+
+        .ds-topbar-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .ds-topbar-nav {
+            display: flex;
+            gap: 6px;
+            margin-left: auto;
+        }
+
+        .ds-topbar-nav a {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .ds-topbar-nav a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .ds-hero {
+            padding: 72px 40px 64px;
+            background: var(--secondary);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .ds-hero-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .ds-hero h1 {
+            font-size: clamp(2.4rem, 4vw, 3.6rem);
+            font-weight: 800;
+            line-height: 0.96;
+            letter-spacing: -0.04em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .ds-hero p {
+            max-width: 52ch;
+            font-size: 1rem;
+            line-height: 1.68;
+            color: rgba(226,232,240,0.72);
+        }
+
+        .ds-hero-meta {
+            display: flex;
+            gap: 32px;
+            margin-top: 40px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .ds-hero-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .ds-hero-meta-label {
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.32);
+        }
+
+        .ds-hero-meta-value {
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.72);
+        }
+
+        /* ── Sections ───────────────────────────────────────────── */
+        .ds-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 72px 40px 0;
+        }
+
+        .ds-section-title {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 36px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(15,23,42,0.1);
+        }
+
+        .ds-section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-heading);
+        }
+
+        .ds-section-title span {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* ── Token Grid ─────────────────────────────────────────── */
+        .ds-token-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+        }
+
+        .ds-token-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid rgba(15,23,42,0.07);
+            box-shadow: 0 2px 8px rgba(15,23,42,0.04);
+        }
+
+        .ds-token-swatch {
+            height: 72px;
+        }
+
+        .ds-token-meta {
+            padding: 12px 14px 14px;
+        }
+
+        .ds-token-name {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 3px;
+        }
+
+        .ds-token-value {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.02em;
+        }
+
+        .ds-token-role {
+            margin-top: 6px;
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        /* ── Contrast chips ─────────────────────────────────────── */
+        .ds-contrast-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            margin-top: 6px;
+        }
+
+        .ds-contrast-chip--pass {
+            background: rgba(21,128,61,0.1);
+            color: #15803d;
+        }
+
+        .ds-contrast-chip--aaa {
+            background: rgba(21,128,61,0.16);
+            color: #166534;
+        }
+
+        /* ── Typography ─────────────────────────────────────────── */
+        .ds-type-row {
+            display: flex;
+            align-items: baseline;
+            gap: 24px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(15,23,42,0.06);
+        }
+
+        .ds-type-row:last-child {
+            border-bottom: 0;
+        }
+
+        .ds-type-meta {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .ds-type-meta-name {
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .ds-type-meta-spec {
+            font-size: 0.66rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+            line-height: 1.5;
+        }
+
+        .ds-type-example {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* ── Radius scale ───────────────────────────────────────── */
+        .ds-radius-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .ds-radius-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ds-radius-box {
+            width: 64px;
+            height: 64px;
+            background: var(--primary);
+            opacity: 0.18;
+            border: 2px solid var(--primary);
+        }
+
+        .ds-radius-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* ── Shadow scale ───────────────────────────────────────── */
+        .ds-shadow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .ds-shadow-item {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .ds-shadow-box {
+            height: 60px;
+            background: #fff;
+            border-radius: 12px;
+        }
+
+        .ds-shadow-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .ds-shadow-value {
+            font-size: 0.64rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+            line-height: 1.5;
+        }
+
+        /* ── Component rows ─────────────────────────────────────── */
+        .ds-component {
+            background: #fff;
+            border: 1px solid rgba(15,23,42,0.07);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .ds-component-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(15,23,42,0.06);
+            background: #fafafa;
+        }
+
+        .ds-component-name {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .ds-component-class {
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(255,77,0,0.08);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .ds-component-body {
+            padding: 28px 24px;
+        }
+
+        .ds-component-body--dark {
+            background: var(--secondary);
+        }
+
+        .ds-component-body--light {
+            background: #eceef1;
+        }
+
+        .ds-states-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ds-state-label {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        /* ── Usage table ────────────────────────────────────────── */
+        .ds-usage-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+        }
+
+        .ds-usage-table th {
+            text-align: left;
+            padding: 10px 14px;
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-bottom: 2px solid rgba(15,23,42,0.08);
+        }
+
+        .ds-usage-table td {
+            padding: 12px 14px;
+            color: var(--text-main);
+            border-bottom: 1px solid rgba(15,23,42,0.06);
+            vertical-align: top;
+        }
+
+        .ds-usage-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .ds-code {
+            display: inline-block;
+            padding: 2px 7px;
+            background: rgba(15,23,42,0.06);
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.76em;
+            color: var(--text-heading);
+        }
+
+        /* ── Pattern panels ─────────────────────────────────────── */
+        .ds-pattern-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .ds-pattern {
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(15,23,42,0.08);
+        }
+
+        .ds-pattern--light {
+            background: #fff;
+        }
+
+        .ds-pattern--dark {
+            background: var(--secondary);
+            border-color: rgba(255,255,255,0.06);
+        }
+
+        .ds-pattern-label {
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .ds-pattern--light .ds-pattern-label { color: var(--text-muted); }
+        .ds-pattern--dark .ds-pattern-label { color: rgba(255,255,255,0.35); }
+
+        /* ── Cert card preview reset ────────────────────────────── */
+        .ds-cert-preview .cert-card {
+            opacity: 1;
+            transform: none;
+        }
+
+        .ds-cert-preview .cert-card__brand {
+            opacity: 1;
+            transform: none;
+        }
+
+        .ds-cert-preview .cert-card__year,
+        .ds-cert-preview .cert-card__body {
+            opacity: 1;
+            transform: none;
+        }
+
+        .ds-cert-preview .cert-card__plus {
+            transform: scale(1);
+        }
+
+        /* ── Exp feature preview reset ──────────────────────────── */
+        .ds-exp-preview .exp-feature {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ── Transition table ───────────────────────────────────── */
+        .ds-transition-demo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .ds-transition-demo:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="ds-body">
+
+    <!-- Topbar -->
+    <header class="ds-topbar">
+        <span class="ds-topbar-badge">Design System</span>
+        <span class="ds-topbar-title">Paweł Steckiewicz CV</span>
+        <nav class="ds-topbar-nav">
+            <a href="#tokeny">Tokeny</a>
+            <a href="#typografia">Typografia</a>
+            <a href="#komponenty">Komponenty</a>
+            <a href="#wzorce">Wzorce</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="ds-hero">
+        <p class="ds-hero-label">v1.0 · 2025</p>
+        <h1>Design System<br>CV Portfolio</h1>
+        <p>Kompletny system projektowy dla strony portfolio. Zawiera tokeny, typografię, komponenty i zasady użycia kolorów zgodnie z WCAG AA.</p>
+        <div class="ds-hero-meta">
+            <div class="ds-hero-meta-item">
+                <span class="ds-hero-meta-label">Stack</span>
+                <span class="ds-hero-meta-value">HTML + CSS Variables + Tailwind CDN</span>
+            </div>
+            <div class="ds-hero-meta-item">
+                <span class="ds-hero-meta-label">Font</span>
+                <span class="ds-hero-meta-value">Poppins 400 / 600 / 700 / 800</span>
+            </div>
+            <div class="ds-hero-meta-item">
+                <span class="ds-hero-meta-label">Dostępność</span>
+                <span class="ds-hero-meta-value">WCAG AA (min. 4.5:1)</span>
+            </div>
+            <div class="ds-hero-meta-item">
+                <span class="ds-hero-meta-label">Plik główny</span>
+                <span class="ds-hero-meta-value">style.css · index.html</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         TOKENY
+    ════════════════════════════════════════════════════════════ -->
+    <section class="ds-section" id="tokeny">
+
+        <!-- Kolory tekstu -->
+        <div class="ds-section-title">
+            <h2>Kolory tekstu</h2>
+            <span>CSS Variables · :root</span>
+        </div>
+
+        <div class="ds-token-grid" style="margin-bottom:48px">
+            <div class="ds-token-card">
+                <div class="ds-token-swatch" style="background:#0f172a"></div>
+                <div class="ds-token-meta">
+                    <div class="ds-token-name">--text-heading</div>
+                    <div class="ds-token-value">#0f172a · slate-900</div>
+                    <div class="ds-token-role">Nagłówki, tytuły sekcji, nazwy firm</div>
+                    <span class="ds-contrast-chip ds-contrast-chip--aaa">AAA · 17:1</span>
+                </div>
+            </div>
+            <div class="ds-token-card">
+                <div class="ds-token-swatch" style="background:#1e293b"></div>
+                <div class="ds-token-meta">
+                    <div class="ds-token-name">--text-main</div>
+                    <div class="ds-token-value">#1e293b · slate-800</div>
+                    <div class="ds-token-role">Treść, listy, body copy, nazwy stanowisk</div>
+                    <span class="ds-contrast-chip ds-contrast-chip--aaa">AAA · 11:1</span>
+                </div>
+            </div>
+            <div class="ds-token-card">
+                <div class="ds-token-swatch" style="background:#64748b"></div>
+                <div class="ds-token-meta">
+                    <div class="ds-token-name">--text-muted</div>
+                    <div class="ds-token-value">#64748b · slate-500</div>
+                    <div class="ds-token-role">Metadane, eyebrow, etykiety, opisy</div>
+                    <span class="ds-contrast-chip ds-contrast-chip--pass">AA · 4.6:1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kolory marki -->
+        <div class="ds-section-title">
+            <h2>Kolory marki i tła</h2>
+            <span>CSS Variables · :root</span>
+        </div>
+
+        <div class="ds-token-grid" style="margin-bottom:48px">
+            <div class="ds-token-card">
+                <div class="ds-token-swatch" style="background:#ff4d00"></div>
+                <div class="ds-token-meta">
+                    <div class="ds-token-name">--primary</div>
+                    <div class="ds-token-value">#ff4d00</div>
+                    <div class="ds-token-role">Akcenty, ikony, liczniki, separatory, tagi</div>
+                </div>
+            </div>
+            <div class="ds-token-card">
+                <div class="ds-token-swatch" style="background:#d94100"></div>
+                <div class="ds-token-meta">
+                    <div class="ds-token-name">--primary-dark</div>
+                    <div class="ds-token-value">#d94100</div>
+                    <div class="ds-token-role">Hover na primary, gradient tło sekcji "O mnie"</div>
+                </div>
+            </div>
+            <div class="ds-token-card">
+                <div class="ds-token-swatch" style="background:#020617"></div>
+                <div class="ds-token-meta">
+                    <div class="ds-token-name">--secondary</div>
+                    <div class="ds-token-value">#020617 · slate-950</div>
+                    <div class="ds-token-role">Tło sekcji ciemnych (hero, kontakt)</div>
+                </div>
+            </div>
+            <div class="ds-token-card">
+                <div class="ds-token-swatch" style="background:#eceef1; border-top:1px solid #e2e4e8"></div>
+                <div class="ds-token-meta">
+                    <div class="ds-token-name">Tło jasne</div>
+                    <div class="ds-token-value">#eceef1</div>
+                    <div class="ds-token-role">Sekcje: doświadczenie, o mnie, certyfikaty</div>
+                </div>
+            </div>
+            <div class="ds-token-card">
+                <div class="ds-token-swatch" style="background:#f3f4f6; border-top:1px solid #e5e7eb"></div>
+                <div class="ds-token-meta">
+                    <div class="ds-token-name">--bg-light</div>
+                    <div class="ds-token-value">#f3f4f6</div>
+                    <div class="ds-token-role">Tło pill narzędzi, ikony</div>
+                </div>
+            </div>
+            <div class="ds-token-card">
+                <div class="ds-token-swatch" style="background:#ffffff; border-top:1px solid #e5e7eb"></div>
+                <div class="ds-token-meta">
+                    <div class="ds-token-name">--white</div>
+                    <div class="ds-token-value">#ffffff</div>
+                    <div class="ds-token-role">Tło kart, tekst na ciemnym tle</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Border radius -->
+        <div class="ds-section-title">
+            <h2>Border Radius</h2>
+            <span>Skala zaokrągleń</span>
+        </div>
+
+        <div class="ds-radius-grid" style="margin-bottom:48px">
+            <div class="ds-radius-item">
+                <div class="ds-radius-box" style="border-radius:4px"></div>
+                <div class="ds-radius-label">4px<br>Micro</div>
+            </div>
+            <div class="ds-radius-item">
+                <div class="ds-radius-box" style="border-radius:7px"></div>
+                <div class="ds-radius-label">7px<br>Tech tag</div>
+            </div>
+            <div class="ds-radius-item">
+                <div class="ds-radius-box" style="border-radius:12px"></div>
+                <div class="ds-radius-label">12px<br>Small card</div>
+            </div>
+            <div class="ds-radius-item">
+                <div class="ds-radius-box" style="border-radius:16px"></div>
+                <div class="ds-radius-label">16px<br>Card default</div>
+            </div>
+            <div class="ds-radius-item">
+                <div class="ds-radius-box" style="border-radius:20px"></div>
+                <div class="ds-radius-label">20px<br>Cert card</div>
+            </div>
+            <div class="ds-radius-item">
+                <div class="ds-radius-box" style="border-radius:24px"></div>
+                <div class="ds-radius-label">24px<br>Modal, contact</div>
+            </div>
+            <div class="ds-radius-item">
+                <div class="ds-radius-box" style="border-radius:32px"></div>
+                <div class="ds-radius-label">32px<br>Project card</div>
+            </div>
+            <div class="ds-radius-item">
+                <div class="ds-radius-box" style="border-radius:999px"></div>
+                <div class="ds-radius-label">999px<br>Pill, button, burger</div>
+            </div>
+        </div>
+
+        <!-- Shadows -->
+        <div class="ds-section-title">
+            <h2>Cienie</h2>
+            <span>box-shadow scale</span>
+        </div>
+
+        <div class="ds-shadow-grid" style="margin-bottom:48px">
+            <div class="ds-shadow-item">
+                <div class="ds-shadow-box" style="box-shadow:0 2px 8px rgba(15,23,42,0.04)"></div>
+                <div>
+                    <div class="ds-shadow-label">XS</div>
+                    <div class="ds-shadow-value">0 2px 8px rgba(15,23,42,.04)<br>Użycie: subtle cards</div>
+                </div>
+            </div>
+            <div class="ds-shadow-item">
+                <div class="ds-shadow-box" style="box-shadow:0 8px 24px rgba(15,23,42,0.06)"></div>
+                <div>
+                    <div class="ds-shadow-label">SM</div>
+                    <div class="ds-shadow-value">0 8px 24px rgba(15,23,42,.06)<br>Użycie: cert card</div>
+                </div>
+            </div>
+            <div class="ds-shadow-item">
+                <div class="ds-shadow-box" style="box-shadow:0 18px 38px rgba(15,23,42,0.05)"></div>
+                <div>
+                    <div class="ds-shadow-label">MD</div>
+                    <div class="ds-shadow-value">0 18px 38px rgba(15,23,42,.05)<br>Użycie: exp-feature card</div>
+                </div>
+            </div>
+            <div class="ds-shadow-item">
+                <div class="ds-shadow-box" style="box-shadow:0 26px 48px rgba(15,23,42,0.09)"></div>
+                <div>
+                    <div class="ds-shadow-label">MD Hover</div>
+                    <div class="ds-shadow-value">0 26px 48px rgba(15,23,42,.09)<br>Użycie: exp-feature hover</div>
+                </div>
+            </div>
+            <div class="ds-shadow-item">
+                <div class="ds-shadow-box" style="box-shadow:0 22px 54px rgba(15,23,42,0.1)"></div>
+                <div>
+                    <div class="ds-shadow-label">LG</div>
+                    <div class="ds-shadow-value">0 22px 54px rgba(15,23,42,.10)<br>Użycie: about highlight</div>
+                </div>
+            </div>
+            <div class="ds-shadow-item">
+                <div class="ds-shadow-box" style="box-shadow:0 30px 80px rgba(0,0,0,0.42)"></div>
+                <div>
+                    <div class="ds-shadow-label">XL</div>
+                    <div class="ds-shadow-value">0 30px 80px rgba(0,0,0,.42)<br>Użycie: modal dialogs</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transitions -->
+        <div class="ds-section-title">
+            <h2>Przejścia</h2>
+            <span>Transition tokens</span>
+        </div>
+
+        <table class="ds-usage-table" style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(15,23,42,0.07);margin-bottom:48px">
+            <thead>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Wartość</th>
+                    <th>Zastosowanie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Fast</strong></td>
+                    <td><span class="ds-code">0.2s ease</span></td>
+                    <td>Kolory, border — tech tag hover, tools row border</td>
+                </tr>
+                <tr>
+                    <td><strong>Default</strong></td>
+                    <td><span class="ds-code">0.25–0.3s ease</span></td>
+                    <td>Burger menu, opacity, transform — standardowe hover</td>
+                </tr>
+                <tr>
+                    <td><strong>Medium</strong></td>
+                    <td><span class="ds-code">0.35–0.45s ease</span></td>
+                    <td>Image scale w kartach, video thumb, modal open</td>
+                </tr>
+                <tr>
+                    <td><strong>Smooth</strong></td>
+                    <td><span class="ds-code">550ms cubic-bezier(0.22,1,0.36,1)</span></td>
+                    <td>Scroll reveal: tools row, cert card wejście</td>
+                </tr>
+                <tr>
+                    <td><strong>Expressive</strong></td>
+                    <td><span class="ds-code">720ms cubic-bezier(0.22,1,0.36,1)</span></td>
+                    <td>About section reveal, exp-feature card</td>
+                </tr>
+                <tr>
+                    <td><strong>Spring</strong></td>
+                    <td><span class="ds-code">500ms cubic-bezier(0.34,1.56,0.64,1)</span></td>
+                    <td>Cert brand logo — efekt "wyskoku"</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         TYPOGRAFIA
+    ════════════════════════════════════════════════════════════ -->
+    <section class="ds-section" id="typografia">
+        <div class="ds-section-title">
+            <h2>Typografia</h2>
+            <span>Poppins · font-main</span>
+        </div>
+
+        <div style="background:#fff;border:1px solid rgba(15,23,42,0.07);border-radius:16px;overflow:hidden;margin-bottom:48px">
+            <div class="ds-type-row" style="padding:28px 24px 20px">
+                <div class="ds-type-meta">
+                    <div class="ds-type-meta-name">Hero Title</div>
+                    <div class="ds-type-meta-spec">clamp(5.22rem, 8.01vw, 7.74rem)<br>weight 800 · tracking 0.005em<br>line-height 0.88 · uppercase</div>
+                </div>
+                <div class="ds-type-example" style="font-size:clamp(3rem,5vw,5rem);font-weight:800;line-height:0.88;letter-spacing:0.005em;text-transform:uppercase;color:var(--text-heading)">PAWEŁ<br>STECKIEWICZ</div>
+            </div>
+            <div class="ds-type-row" style="padding:20px 24px">
+                <div class="ds-type-meta">
+                    <div class="ds-type-meta-name">Section Title H2</div>
+                    <div class="ds-type-meta-spec">clamp(2.5rem, 4vw, 3.35rem)<br>weight 800 · tracking -0.045em<br>line-height 0.94 · var(--text-heading)</div>
+                </div>
+                <div class="ds-type-example" style="font-size:clamp(2rem,3.5vw,3.35rem);font-weight:800;line-height:0.94;letter-spacing:-0.045em;color:var(--text-heading)">Doświadczenie</div>
+            </div>
+            <div class="ds-type-row" style="padding:20px 24px">
+                <div class="ds-type-meta">
+                    <div class="ds-type-meta-name">Card Title H3</div>
+                    <div class="ds-type-meta-spec">1.32rem · weight 700<br>tracking -0.03em · line-height 1.18<br>var(--text-heading)</div>
+                </div>
+                <div class="ds-type-example" style="font-size:1.32rem;font-weight:700;line-height:1.18;letter-spacing:-0.03em;color:var(--text-heading)">Senior Digital Projects Specialist</div>
+            </div>
+            <div class="ds-type-row" style="padding:20px 24px">
+                <div class="ds-type-meta">
+                    <div class="ds-type-meta-name">Body</div>
+                    <div class="ds-type-meta-spec">1rem · weight 400<br>line-height 1.75<br>var(--text-main)</div>
+                </div>
+                <div class="ds-type-example" style="font-size:1rem;line-height:1.75;color:var(--text-main)">Jestem ekspertem digitalowym z ponad 15-letnim doświadczeniem w prowadzeniu projektów technologicznych i e-marketingowych.</div>
+            </div>
+            <div class="ds-type-row" style="padding:20px 24px">
+                <div class="ds-type-meta">
+                    <div class="ds-type-meta-name">List Item</div>
+                    <div class="ds-type-meta-spec">0.82rem · weight 400<br>line-height 1.55<br>var(--text-main)</div>
+                </div>
+                <div class="ds-type-example" style="font-size:0.82rem;line-height:1.55;color:var(--text-main)">Zarządzanie 20 stronami brandowymi na różnych systemach CMS (WordPress, EPI CMS, autorskie CMS-y).</div>
+            </div>
+            <div class="ds-type-row" style="padding:20px 24px">
+                <div class="ds-type-meta">
+                    <div class="ds-type-meta-name">Eyebrow / Label</div>
+                    <div class="ds-type-meta-spec">0.82rem · weight 700<br>tracking 0.16em · uppercase<br>var(--text-muted)</div>
+                </div>
+                <div class="ds-type-example" style="font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted)">Kariera</div>
+            </div>
+            <div class="ds-type-row" style="padding:20px 24px">
+                <div class="ds-type-meta">
+                    <div class="ds-type-meta-name">Meta / Date</div>
+                    <div class="ds-type-meta-spec">0.76rem · weight 700<br>tracking 0.11em · uppercase<br>var(--text-muted)</div>
+                </div>
+                <div class="ds-type-example" style="font-size:0.76rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--text-muted)">05.2023 — OBECNIE &nbsp;|&nbsp; <span style="color:var(--text-heading)">Teva Pharmaceuticals</span></div>
+            </div>
+            <div class="ds-type-row" style="padding:20px 24px">
+                <div class="ds-type-meta">
+                    <div class="ds-type-meta-name">Hero Stat</div>
+                    <div class="ds-type-meta-spec">clamp(3.5rem, 4.6vw, 4.9rem)<br>weight 800 · uppercase<br>var(--primary)</div>
+                </div>
+                <div class="ds-type-example" style="font-size:clamp(2.5rem,4.6vw,4.9rem);font-weight:800;line-height:1;color:var(--primary)">18</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         KOMPONENTY
+    ════════════════════════════════════════════════════════════ -->
+    <section class="ds-section" id="komponenty">
+        <div class="ds-section-title">
+            <h2>Komponenty</h2>
+            <span>Wszystkie stany</span>
+        </div>
+
+        <!-- Eyebrow -->
+        <div class="ds-component">
+            <div class="ds-component-header">
+                <span class="ds-component-name">Eyebrow</span>
+                <span class="ds-component-class">.bento-eyebrow / .projects-eyebrow</span>
+            </div>
+            <div class="ds-component-body" style="background:#eceef1">
+                <div class="ds-states-row">
+                    <span class="bento-eyebrow">Kariera</span>
+                    <span class="projects-eyebrow">Wybrane realizacje</span>
+                    <span class="bento-eyebrow">Ciągły rozwój</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Tag -->
+        <div class="ds-component">
+            <div class="ds-component-header">
+                <span class="ds-component-name">Tech Tag</span>
+                <span class="ds-component-class">.tech-tag</span>
+            </div>
+            <div class="ds-component-body">
+                <div class="ds-state-label">Default</div>
+                <div class="ds-states-row" style="margin-bottom:20px">
+                    <span class="tech-tag">WordPress</span>
+                    <span class="tech-tag">Google Analytics 4</span>
+                    <span class="tech-tag">Adobe AEM</span>
+                    <span class="tech-tag">Figma</span>
+                    <span class="tech-tag">SEO Strategy</span>
+                </div>
+                <div class="ds-state-label">Hover (najedź kursorem)</div>
+                <div class="ds-states-row">
+                    <span class="tech-tag" style="background:var(--primary-dark);border-color:var(--primary-dark);color:#fff">WordPress</span>
+                    <span class="tech-tag" style="background:var(--primary-dark);border-color:var(--primary-dark);color:#fff">Google Analytics 4</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools Pill -->
+        <div class="ds-component">
+            <div class="ds-component-header">
+                <span class="ds-component-name">Tools Pill</span>
+                <span class="ds-component-class">.tools-pill</span>
+            </div>
+            <div class="ds-component-body">
+                <div class="ds-state-label">Default</div>
+                <div class="ds-states-row" style="margin-bottom:20px">
+                    <figure class="tools-pill" style="opacity:1;transform:none">
+                        <img src="img/tools/chatgpt.png" alt="ChatGPT" style="width:18px;height:18px">
+                        <figcaption>ChatGPT</figcaption>
+                    </figure>
+                    <figure class="tools-pill" style="opacity:1;transform:none">
+                        <img src="img/tools/figma-logo.png" alt="Figma" style="width:18px;height:18px">
+                        <figcaption>Figma</figcaption>
+                    </figure>
+                    <figure class="tools-pill" style="opacity:1;transform:none">
+                        <img src="img/tools/wordpress.svg" alt="WordPress" style="width:18px;height:18px">
+                        <figcaption>WordPress</figcaption>
+                    </figure>
+                    <figure class="tools-pill" style="opacity:1;transform:none">
+                        <img src="img/tools/jira.svg" alt="Jira" style="width:18px;height:18px">
+                        <figcaption>Jira</figcaption>
+                    </figure>
+                    <figure class="tools-pill" style="opacity:1;transform:none">
+                        <img src="img/tools/github.svg" alt="GitHub" style="width:18px;height:18px">
+                        <figcaption>GitHub</figcaption>
+                    </figure>
+                    <figure class="tools-pill" style="opacity:1;transform:none">
+                        <img src="img/tools/html5.svg" alt="HTML5" style="width:18px;height:18px">
+                        <figcaption>HTML5</figcaption>
+                    </figure>
+                </div>
+                <div class="ds-state-label">Hover</div>
+                <div class="ds-states-row">
+                    <figure class="tools-pill" style="opacity:1;transform:none;background:#fff;border-color:rgba(15,23,42,0.2)">
+                        <img src="img/tools/chatgpt.png" alt="" style="width:18px;height:18px">
+                        <figcaption>ChatGPT</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <!-- LinkedIn Button -->
+        <div class="ds-component">
+            <div class="ds-component-header">
+                <span class="ds-component-name">LinkedIn Button</span>
+                <span class="ds-component-class">.contact-linkedin-button</span>
+            </div>
+            <div class="ds-component-body ds-component-body--dark">
+                <div class="ds-state-label" style="color:rgba(255,255,255,0.35)">Default</div>
+                <div class="ds-states-row" style="margin-bottom:20px">
+                    <a class="contact-linkedin-button" href="#" style="pointer-events:none">
+                        <span>Otwórz profil LinkedIn</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="width:22px;height:22px;flex:0 0 22px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round">
+                            <path d="M14 5h5v5"></path><path d="M10 14 19 5"></path>
+                            <path d="M19 13v5a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-12a1 1 0 0 1 1-1h5"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cert Card -->
+        <div class="ds-component">
+            <div class="ds-component-header">
+                <span class="ds-component-name">Certificate Card</span>
+                <span class="ds-component-class">.cert-card</span>
+            </div>
+            <div class="ds-component-body" style="background:#f8f9fb">
+                <div class="ds-cert-preview cert-grid" style="grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px">
+
+                    <article class="cert-card cert-card--sensai visible">
+                        <div class="cert-card__visual">
+                            <svg class="cert-card__plus" viewBox="0 0 12 12" aria-hidden="true"><path d="M7 12L4.953 12.0002V7.047H7.047L7 12ZM4.953 7.047L0 7V4.953H4.953V7.047ZM12 7.047H7.047V4.953L12 5V7.047ZM7.047 4.953H4.953V0H7.047V4.953Z"></path></svg>
+                            <span class="cert-card__year">2025</span>
+                            <div class="cert-card__visual-inner">
+                                <p class="cert-card__brand">SENSAI</p>
+                                <p class="cert-card__visual-copy">SEO 3.0 / AI workflow</p>
+                            </div>
+                        </div>
+                        <div class="cert-card__body">
+                            <p class="cert-card__issuer">SENSAI ACADEMY</p>
+                            <h3 class="cert-card__title">SEO 3.0 — narzędzia AI w SEO</h3>
+                            <div class="cert-card__footer">
+                                <span class="cert-card__tag">AI + SEO</span>
+                                <button class="cert-card__action" type="button" aria-label="Pokaż certyfikat">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8"></path><path d="M10 8h6v6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cert-card cert-card--google visible">
+                        <div class="cert-card__visual">
+                            <svg class="cert-card__plus" viewBox="0 0 12 12" aria-hidden="true"><path d="M7 12L4.953 12.0002V7.047H7.047L7 12ZM4.953 7.047L0 7V4.953H4.953V7.047ZM12 7.047H7.047V4.953L12 5V7.047ZM7.047 4.953H4.953V0H7.047V4.953Z"></path></svg>
+                            <span class="cert-card__year">2023</span>
+                            <div class="cert-card__visual-inner">
+                                <p class="cert-card__brand cert-card__brand--compact">Google<br><span>x SGH</span></p>
+                                <p class="cert-card__visual-copy">Digital growth</p>
+                            </div>
+                        </div>
+                        <div class="cert-card__body">
+                            <p class="cert-card__issuer">GOOGLE / SGH</p>
+                            <h3 class="cert-card__title">Kurs umiejętności jutra — 8-tygodniowy program</h3>
+                            <div class="cert-card__footer">
+                                <span class="cert-card__tag">Marketing cyfrowy</span>
+                                <button class="cert-card__action" type="button" aria-label="Pokaż certyfikat">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8"></path><path d="M10 8h6v6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cert-card cert-card--coi visible">
+                        <div class="cert-card__visual">
+                            <svg class="cert-card__plus" viewBox="0 0 12 12" aria-hidden="true"><path d="M7 12L4.953 12.0002V7.047H7.047L7 12ZM4.953 7.047L0 7V4.953H4.953V7.047ZM12 7.047H7.047V4.953L12 5V7.047ZM7.047 4.953H4.953V0H7.047V4.953Z"></path></svg>
+                            <span class="cert-card__year">2023</span>
+                            <div class="cert-card__visual-inner">
+                                <p class="cert-card__brand">COI</p>
+                                <p class="cert-card__visual-copy">IT projects / delivery</p>
+                            </div>
+                        </div>
+                        <div class="cert-card__body">
+                            <p class="cert-card__issuer">CENTRALNY OŚRODEK INFORMATYKI</p>
+                            <h3 class="cert-card__title">Nowy Ty w IT — Prowadzenie projektów</h3>
+                            <div class="cert-card__footer">
+                                <span class="cert-card__tag">Zarządzanie IT</span>
+                                <button class="cert-card__action" type="button" aria-label="Pokaż certyfikat">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8"></path><path d="M10 8h6v6"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Card -->
+        <div class="ds-component">
+            <div class="ds-component-header">
+                <span class="ds-component-name">Experience Card</span>
+                <span class="ds-component-class">.exp-feature</span>
+            </div>
+            <div class="ds-component-body ds-component-body--light ds-exp-preview">
+                <article class="exp-feature" style="max-width:860px">
+                    <div class="exp-feature-media">
+                        <img src="img/logo/Teva_Pharmaceuticals_logo.png" alt="Teva" style="width:100%;height:auto;object-fit:contain">
+                    </div>
+                    <div class="exp-feature-content">
+                        <h3 class="exp-feature-role">Starszy specjalista ds. projektów internetowych</h3>
+                        <div class="job-content-wrapper">
+                            <ul class="exp-feature-list">
+                                <li>Zarządzanie 20 stronami brandowymi na różnych systemach CMS.</li>
+                                <li>Wdrożenie strategii SEO na stronach produktowych.</li>
+                                <li>Analiza ruchu w Google Analytics, dashboardy w Looker Studio.</li>
+                            </ul>
+                            <div class="job-tech-stack" style="min-width:200px;padding-left:22px;border-left:1px solid rgba(15,23,42,0.08)">
+                                <div class="tags-container">
+                                    <span class="tech-tag">WordPress</span>
+                                    <span class="tech-tag">GA4</span>
+                                    <span class="tech-tag">SEO</span>
+                                    <span class="tech-tag">Looker Studio</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Tools Row -->
+        <div class="ds-component">
+            <div class="ds-component-header">
+                <span class="ds-component-name">Tools Row</span>
+                <span class="ds-component-class">.tools-row + .tools-pill</span>
+            </div>
+            <div class="ds-component-body">
+                <article class="tools-row visible" style="opacity:1;transform:none">
+                    <div class="tools-row-meta">
+                        <p class="tools-row-label">AI</p>
+                        <span class="tools-row-divider" aria-hidden="true"></span>
+                    </div>
+                    <div class="tools-grid">
+                        <figure class="tools-pill visible" style="opacity:1;transform:none">
+                            <img src="img/tools/chatgpt.png" alt="ChatGPT">
+                            <figcaption>ChatGPT</figcaption>
+                        </figure>
+                        <figure class="tools-pill visible" style="opacity:1;transform:none">
+                            <img src="img/tools/figma-logo.png" alt="Figma">
+                            <figcaption>Figma</figcaption>
+                        </figure>
+                        <figure class="tools-pill visible" style="opacity:1;transform:none">
+                            <img src="img/tools/vscode.svg" alt="VS Code">
+                            <figcaption>VS Code</figcaption>
+                        </figure>
+                        <figure class="tools-pill visible" style="opacity:1;transform:none">
+                            <img src="img/tools/javascript.svg" alt="JavaScript">
+                            <figcaption>JavaScript</figcaption>
+                        </figure>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         WZORCE UŻYCIA
+    ════════════════════════════════════════════════════════════ -->
+    <section class="ds-section" id="wzorce">
+        <div class="ds-section-title">
+            <h2>Wzorce sekcji</h2>
+            <span>Jasne vs. Ciemne tło</span>
+        </div>
+
+        <div class="ds-pattern-grid" style="margin-bottom:40px">
+
+            <div class="ds-pattern ds-pattern--light">
+                <div class="ds-pattern-label" style="color:var(--text-muted)">Sekcja jasna · #eceef1 / #fff</div>
+                <p style="font-size:0.64rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">Eyebrow</p>
+                <p style="font-size:1.6rem;font-weight:800;letter-spacing:-0.04em;color:var(--text-heading);line-height:1;margin-bottom:12px">Tytuł sekcji</p>
+                <p style="font-size:0.9rem;line-height:1.65;color:var(--text-main);margin-bottom:16px">Opis lub treść karty z użyciem <code class="ds-code">--text-main</code>.</p>
+                <p style="font-size:0.74rem;color:var(--text-muted)">Metadane z użyciem <code class="ds-code">--text-muted</code></p>
+            </div>
+
+            <div class="ds-pattern ds-pattern--dark">
+                <div class="ds-pattern-label">Sekcja ciemna · --secondary</div>
+                <p style="font-size:0.64rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(191,219,254,0.8);margin-bottom:8px">Eyebrow / kicker</p>
+                <p style="font-size:1.6rem;font-weight:800;letter-spacing:-0.04em;color:#fff;line-height:1;margin-bottom:12px">Tytuł sekcji</p>
+                <p style="font-size:0.9rem;line-height:1.65;color:rgba(226,232,240,0.88);margin-bottom:16px">Treść na ciemnym tle: <code style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:0.76em">#fff</code> lub <code style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:0.76em">rgba(226,232,240,.88)</code>.</p>
+                <span style="color:var(--primary);font-size:0.78rem;font-weight:700">Akcent marki</span>
+            </div>
+
+        </div>
+
+        <!-- Zasady -->
+        <div class="ds-section-title">
+            <h2>Zasady i reguły</h2>
+            <span>Do i nie do</span>
+        </div>
+
+        <table class="ds-usage-table" style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(15,23,42,0.07);margin-bottom:48px">
+            <thead>
+                <tr>
+                    <th>Reguła</th>
+                    <th>✓ Poprawnie</th>
+                    <th>✗ Błędnie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Kolor tekstu</strong></td>
+                    <td><span class="ds-code">color: var(--text-heading)</span></td>
+                    <td><span class="ds-code">color: #262626</span> lub <span class="ds-code">color: #0f172a</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Tailwind vs. CSS</strong></td>
+                    <td>Usuń inline <span class="ds-code">text-[#xxx]</span>, ustaw kolor w <span class="ds-code">style.css</span></td>
+                    <td>Mixowanie hardkodowanych klas Tailwind z CSS variables</td>
+                </tr>
+                <tr>
+                    <td><strong>Nowy komponent na jasnym tle</strong></td>
+                    <td><span class="ds-code">--text-heading</span> nagłówek, <span class="ds-code">--text-main</span> treść, <span class="ds-code">--text-muted</span> meta</td>
+                    <td>Nowe odcienie szarości lub nowe zmienne kolorów</td>
+                </tr>
+                <tr>
+                    <td><strong>Nowy komponent na ciemnym tle</strong></td>
+                    <td><span class="ds-code">#fff</span>, <span class="ds-code">rgba(226,232,240,.88)</span>, <span class="ds-code">var(--primary)</span></td>
+                    <td>Używanie <span class="ds-code">--text-heading</span> na ciemnym tle (za mały kontrast)</td>
+                </tr>
+                <tr>
+                    <td><strong>Specificity Tailwind CDN</strong></td>
+                    <td>Selektory z rodzicielskim kontekstem lub usuwaj klasy Tailwind z HTML</td>
+                    <td>Zakładanie że <span class="ds-code">style.css</span> zawsze wygrywa z Tailwind</td>
+                </tr>
+                <tr>
+                    <td><strong>Zaokrąglenia</strong></td>
+                    <td>Wartości ze skali: 7, 12, 16, 20, 24, 32, 999px</td>
+                    <td>Losowe wartości: 10px, 15px, 18px, 25px</td>
+                </tr>
+                <tr>
+                    <td><strong>Animacje wejścia</strong></td>
+                    <td>IntersectionObserver przez <span class="ds-code">script.js</span> + klasa <span class="ds-code">.visible</span></td>
+                    <td>Animacje CSS bez IntersectionObserver (wszystko animuje się od razu)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Dostępność -->
+        <div class="ds-section-title">
+            <h2>Dostępność</h2>
+            <span>WCAG AA checklist</span>
+        </div>
+
+        <table class="ds-usage-table" style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(15,23,42,0.07)">
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Wymaganie</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tekst normalny</td>
+                    <td>Min. 4.5:1 kontrastu</td>
+                    <td><span class="ds-contrast-chip ds-contrast-chip--pass">✓ --text-muted 4.6:1</span></td>
+                </tr>
+                <tr>
+                    <td>Tekst duży (≥18px bold lub ≥24px)</td>
+                    <td>Min. 3:1 kontrastu</td>
+                    <td><span class="ds-contrast-chip ds-contrast-chip--pass">✓ wszystkie kolory spełniają</span></td>
+                </tr>
+                <tr>
+                    <td>Interaktywne elementy</td>
+                    <td><span class="ds-code">aria-label</span> lub widoczny tekst</td>
+                    <td><span class="ds-contrast-chip ds-contrast-chip--pass">✓ burger, modals, cert buttons</span></td>
+                </tr>
+                <tr>
+                    <td>Karty interaktywne</td>
+                    <td><span class="ds-code">tabindex="0"</span> i <span class="ds-code">:focus-visible</span></td>
+                    <td><span class="ds-contrast-chip ds-contrast-chip--pass">✓ interest-card</span></td>
+                </tr>
+                <tr>
+                    <td>Animacje</td>
+                    <td><span class="ds-code">prefers-reduced-motion</span></td>
+                    <td><span class="ds-contrast-chip ds-contrast-chip--pass">✓ obsługiwane w style.css</span></td>
+                </tr>
+                <tr>
+                    <td>Zduplikowane listy logo</td>
+                    <td><span class="ds-code">aria-hidden="true"</span> na kopii</td>
+                    <td><span class="ds-contrast-chip ds-contrast-chip--pass">✓ hero marquee</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</body>
+</html>
