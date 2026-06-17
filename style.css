@@ -162,7 +162,7 @@ button {
 
 .hero-stats {
     position: absolute;
-    left: clamp(990px, 73.5vw, 1290px);
+    left: clamp(900px, 56vw, 1500px);
     bottom: 533px;
     display: flex;
     gap: 44px;
@@ -218,7 +218,7 @@ button {
 .hero-logo-track {
     display: flex;
     width: max-content;
-    animation: hero-logo-scroll 88s linear infinite;
+    animation: hero-logo-scroll 20s linear infinite;
 }
 
 .hero-logo-marquee:hover .hero-logo-track {
@@ -294,7 +294,7 @@ button {
 
 .about-highlight__inner {
     width: 100%;
-    max-width: 1360px;
+    max-width: 1440px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: minmax(360px, 1fr) minmax(0, 1.08fr);
@@ -338,6 +338,11 @@ button {
     align-items: stretch;
     gap: 12px;
     min-height: 468px;
+    transition: grid-template-columns 520ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-highlight__gallery:has(.about-highlight__card--portrait:hover) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr);
 }
 
 .about-highlight__card {
@@ -2025,7 +2030,7 @@ body.reveal-ready .exp-feature.is-visible::after {
 }
 
 .contact-shell {
-    max-width: 1180px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -2119,7 +2124,7 @@ body.reveal-ready .exp-feature.is-visible::after {
 }
 
 .contact-story-copy h2 {
-    max-width: 16ch;
+    max-width: 36ch;
     font-size: clamp(1.72rem, 2.35vw, 1.95rem);
     line-height: 1.07;
 }
@@ -2146,7 +2151,7 @@ body.reveal-ready .exp-feature.is-visible::after {
 .contact-proof-cta h3 {
     margin: 0;
     color: #fff;
-    max-width: 7ch;
+    max-width: 14ch;
     font-size: clamp(1.72rem, 2.2vw, 2.15rem);
     line-height: 0.98;
     letter-spacing: -0.035em;
@@ -2214,6 +2219,12 @@ body.reveal-ready .interests-shell {
     opacity: 1;
 }
 
+@media (min-width: 2200px) {
+    .hero-stats {
+        left: 1690px;
+    }
+}
+
 @media (max-width: 1100px) {
     .hero-content {
 
@@ -2231,7 +2242,7 @@ body.reveal-ready .interests-shell {
 
     .hero-stats {
         position: absolute;
-        left: clamp(700px, 73vw, 900px);
+        left: clamp(400px, 73vw, 600px);
         bottom: 484px;
         gap: 24px;
     }
@@ -2865,6 +2876,11 @@ body.reveal-ready .interests-shell {
     }
 
     .about-highlight__gallery {
+        grid-template-columns: 1fr;
+        transition: none;
+    }
+
+    .about-highlight__gallery:has(.about-highlight__card--portrait:hover) {
         grid-template-columns: 1fr;
     }
 

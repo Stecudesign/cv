@@ -961,6 +961,47 @@
             </div>
         </section>
         <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        (function () {
+            const textEl = document.querySelector('.about-highlight__text');
+            if (!textEl) return;
+
+            // Split words, preserve <br>
+            const parts = textEl.innerHTML.split(/(<br\s*\/?>)/gi);
+            textEl.innerHTML = parts.map(part => {
+                if (/^<br/i.test(part)) return part;
+                return part.split(/(\s+)/).map(token => {
+                    if (!token || /^\s+$/.test(token)) return token;
+                    return `<span class="scrub-word">${token}</span>`;
+                }).join('');
+            }).join('');
+
+            const words = textEl.querySelectorAll('.scrub-word');
+
+            // Pre-ghost all words before the container becomes visible
+            gsap.set(words, { opacity: 0.15 });
+
+            // Take the copy container out of the CSS reveal system
+            const copyEl = textEl.closest('.about-highlight__copy');
+            if (copyEl) copyEl.classList.add('is-visible');
+
+            gsap.to(words, {
+                opacity: 1,
+                ease: 'none',
+                stagger: { each: 0.15, from: 'start' },
+                scrollTrigger: {
+                    trigger: textEl,
+                    start: 'top 75%',
+                    end: 'bottom 60%',
+                    scrub: 1,
+                }
+            });
+        })();
+        </script>
     </body>
 </html>
 
